@@ -1,5 +1,7 @@
 from typing import Optional, List
 
+from sqlalchemy.ext.asyncio import AsyncSession
+
 from domain.entities.execution import Execution, ExecutionStatus
 from domain.entities.workflow import Workflow
 from domain.repositories.execution_repository import ExecutionRepository
@@ -7,16 +9,21 @@ from domain.repositories.workflow_repository import WorkflowRepository
 from api.schemas.execution import ExecutionResponse
 from domain.rules.workflow_rules import WorkflowRules
 from config.logging import get_logger, log_request_data, log_execution_step
+from services.execution_dispatcher import ExecutionDispatcher
 from services.processors.registry import ProcessorRegistry
 
 class ExecutionService:
     def __init__(
         self,
         execution_repository: ExecutionRepository,
-        workflow_repository: WorkflowRepository
+        workflow_repository: WorkflowRepository,
+        dispatcher: ExecutionDispatcher,
+        db_session: AsyncSession,
     ):
         self.execution_repository = execution_repository
         self.workflow_repository = workflow_repository
+        self.dispatcher = dispatcher
+        self.db_session = db_session
         self.logger = get_logger("execution.service")
 
     async def start_execution(
@@ -56,7 +63,11 @@ class ExecutionService:
         )
 
         created_execution = await self.execution_repository.create(execution)
-        self.logger.info(f"Created execution: {created_execution.id}")
+        await self.db_session.commit()
+        self.logger.info(f"Created execution and committed transaction: {created_execution.id}")
+
+        self.dispatcher.dispatch(created_execution.id, self.process_workflow_execution)
+        self.logger.info(f"Dispatched background processing for execution: {created_execution.id}")
 
         return self._to_execution_response(created_execution)
 

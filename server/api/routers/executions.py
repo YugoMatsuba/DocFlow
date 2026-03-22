@@ -1,13 +1,11 @@
-from fastapi import APIRouter, HTTPException, Depends, status, BackgroundTasks, UploadFile, File, Query
+from fastapi import APIRouter, HTTPException, Depends, status, UploadFile, File, Query
 from typing import List
 
 from services.execution_service import ExecutionService
 from api.schemas.execution import ExecutionResponse
 from api.dependencies import get_execution_service
 from infra.storage.file_storage import FileStorage
-from infra.db.database import get_db_session
 from config.logging import get_logger, log_request_data
-from sqlalchemy.ext.asyncio import AsyncSession
 
 router = APIRouter(prefix="/executions", tags=["executions"])
 logger = get_logger("execution.router")
@@ -20,10 +18,8 @@ def get_file_storage() -> FileStorage:
 async def start_execution(
     workflow_id: str = Query(..., description="Workflow ID to execute"),
     file: UploadFile = File(..., description="PDF file to process"),
-    background_tasks: BackgroundTasks = BackgroundTasks(),
     service: ExecutionService = Depends(get_execution_service),
     file_storage: FileStorage = Depends(get_file_storage),
-    db_session: AsyncSession = Depends(get_db_session)
 ):
     """Start workflow execution with PDF file upload"""
     # Log the incoming request
@@ -52,14 +48,7 @@ async def start_execution(
                 detail="Workflow not found or invalid"
             )
 
-        logger.info(f"Starting background processing for execution: {execution.id}")
-
-        # Commit the execution to database before returning response
-        await db_session.commit()
-        logger.info(f"Execution {execution.id} committed to database")
-
-        # Add background task to process the workflow
-        background_tasks.add_task(service.process_workflow_execution, execution.id)
+        logger.info(f"Execution {execution.id} accepted for background processing")
 
         return execution
     except HTTPException:
