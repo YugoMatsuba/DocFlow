@@ -120,3 +120,26 @@ npm run build
 - 課題提出向けなので説明可能性を重視したい
 
 ---
+
+## 記入例
+
+### 背景
+
+Execution の非同期実行方式が Router に漏れているため、将来キューへ移行するときに API 層まで変更が波及しやすい。
+
+### 目的
+
+非同期実行起動方式を抽象化し、Router が `ExecutionService` にのみ依存する形へ整理したい。
+
+### スコープ
+
+- `ExecutionDispatcher` interface を追加
+- `BackgroundTasksExecutionDispatcher` を追加
+- `ExecutionService` から dispatcher を使う
+- Router から `BackgroundTasks` 直接依存を除去
+
+### 非スコープ
+
+- Redis / Celery の導入
+- `process_workflow_execution()` の大規模分離
+- execution status の enum 再設計
