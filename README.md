@@ -82,6 +82,60 @@ flowchart TB
     ED --> BGT
 ```
 
+### レイヤーごとの役割
+
+#### `api`
+
+- FastAPI の Router、Schema、Dependency Injection を担当
+- HTTP リクエストを受けて、入力を application service に渡し、HTTP レスポンスへ変換する
+- 具体的な非同期実行方式や DB 実装はここで直接扱わない
+
+工夫したポイント:
+
+- Router に業務ロジックを寄せすぎないようにし、HTTP の責務に集中させている
+- 依存解決は `dependencies.py` に集約し、具体実装の差し替え箇所を明確にしている
+
+#### `services`
+
+- ユースケースのオーケストレーションを担当
+- Workflow の作成・検証、Execution の作成・起動・状態更新を扱う
+- ProcessorRegistry を使ってノード処理を実行し、Dispatcher を通じて非同期起動する
+
+工夫したポイント:
+
+- `ExecutionService` は `ExecutionDispatcher` 抽象に依存させ、起動方式の詳細を隠している
+- ノード追加時に service 側へ巨大な分岐を書かなくて済むよう、processor と registry を組み合わせている
+
+#### `domain`
+
+- Entity、Enum、Repository interface、Rule、Spec を担当
+- ワークフローの整合性やノード入出力制約など、業務上のルールを表現する
+
+工夫したポイント:
+
+- `WorkflowRules` にワークフローの検証ロジックを分離し、service の責務を軽くしている
+- `NodeSpec` / `NodeSpecRegistry` にノードの入出力制約を切り出し、ルールと実装詳細を分離している
+- Repository interface を domain 側に置き、上位層が DB 実装に直接依存しないようにしている
+
+#### `infra`
+
+- PostgreSQL への永続化、OpenAI API 呼び出し、ファイル保存、BackgroundTasks 実装などを担当
+- domain / service が必要とする外部依存の具体実装を提供する
+
+工夫したポイント:
+
+- SQLAlchemy repository に DB 実装を閉じ込め、service は repository interface だけを見る構成にしている
+- `BackgroundTasksExecutionDispatcher` を adapter として置き、FastAPI 固有の仕組みを service/Router から分離している
+- `FileStorage`、`OpenAIClient` を分けて、I/O 系の責務を一点にまとめている
+
+### 設計上の工夫
+
+- **高凝集**: レイヤーごとに責務を分け、変更理由が異なるコードを同じ場所に集めすぎないようにしている
+- **疎結合**: repository や dispatcher を抽象化し、具体実装の変更が上位層に波及しにくい構造にしている
+- **MVP と将来拡張の両立**: 現時点では `BackgroundTasks` を使ってシンプルに実装しつつ、Dispatcher 抽象で将来のキュー移行余地を残している
+- **ノード追加のしやすさ**: processor、registry、NodeSpec を分けることで、新しい NodeType 追加時の影響範囲を局所化している
+- **ルールの明示**: ノードの入出力制約や workflow の成立条件を domain 側に寄せ、コード上で説明可能な形にしている
+
 ワークフロー実行時の流れは以下です。
 
 ```mermaid
@@ -112,9 +166,21 @@ sequenceDiagram
 ```text
 .
 ├── adr/                    # ADR
-├── client/                 # React フロントエンド
+├── client/                 # React + Vite フロントエンド
+│   ├── src/                # 画面、API クライアント、型定義
+│   ├── package.json
+│   └── vite.config.ts
+├── docs/                   # エージェント運用資料、Spec テンプレート
 ├── server/                 # FastAPI バックエンド
-├── Claude.md               # 課題実施メモ
+│   ├── api/                # Router、Schema、DI
+│   ├── domain/             # Entity、Rule、Spec、Repository interface
+│   ├── infra/              # DB、外部 API、ファイル保存などの実装
+│   ├── services/           # ユースケース実装、processor、dispatcher
+│   ├── alembic/            # マイグレーション
+│   ├── config/             # 設定管理
+│   ├── main.py             # FastAPI エントリポイント
+│   └── requirements.txt
+├── CLAUDE.md               # エージェント向け開発ルール
 └── README.md
 ```
 
@@ -260,11 +326,6 @@ npm run dev
   - `multipart/form-data` で PDF ファイルをアップロード
 - `GET /api/executions/`
 - `GET /api/executions/{execution_id}`
-
-### Utility API
-
-- `GET /`
-- `GET /health`
 
 ## 現状の設計上のポイント
 
