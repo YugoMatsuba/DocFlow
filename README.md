@@ -30,58 +30,6 @@ flowchart LR
 現状はレイヤードアーキテクチャを採用し、`api`、`services`、`domain`、`infra` の責務を分離しています。  
 ワークフロー実行の起動方式は `ExecutionDispatcher` で抽象化しており、MVP では `BackgroundTasks` 実装を利用しています。
 
-```mermaid
-flowchart TB
-    subgraph API Layer
-        R1[Workflow Router]
-        R2[Execution Router]
-        DEP[Dependencies]
-    end
-
-    subgraph Application Layer
-        WS[WorkflowService]
-        ES[ExecutionService]
-        ED[ExecutionDispatcher]
-        PR[ProcessorRegistry]
-    end
-
-    subgraph Domain Layer
-        ENT[Entities / Enums]
-        RULE[WorkflowRules]
-        SPEC[NodeSpec / NodeSpecRegistry]
-        REPOIF[Repository Interfaces]
-    end
-
-    subgraph Infrastructure Layer
-        SQLREPO[SQLAlchemy Repositories]
-        FILES[FileStorage]
-        OPENAI[OpenAIClient]
-        BGT[BackgroundTasksExecutionDispatcher]
-        DB[(PostgreSQL)]
-    end
-
-    R1 --> WS
-    R2 --> ES
-    DEP --> WS
-    DEP --> ES
-    DEP --> BGT
-    ES --> ED
-    ES --> PR
-    ES --> RULE
-    WS --> RULE
-    WS --> PR
-    WS --> REPOIF
-    ES --> REPOIF
-    RULE --> SPEC
-    REPOIF --> ENT
-    PR --> OPENAI
-    R2 --> FILES
-    SQLREPO --> DB
-    WS --> SQLREPO
-    ES --> SQLREPO
-    ED --> BGT
-```
-
 ### レイヤーごとの役割
 
 #### `api`
@@ -137,29 +85,6 @@ flowchart TB
 - **ルールの明示**: ノードの入出力制約や workflow の成立条件を domain 側に寄せ、コード上で説明可能な形にしている
 
 ワークフロー実行時の流れは以下です。
-
-```mermaid
-sequenceDiagram
-    participant User as User
-    participant Front as Frontend
-    participant Router as Execution Router
-    participant Service as ExecutionService
-    participant Dispatcher as ExecutionDispatcher
-    participant BG as BackgroundTasks
-    participant DB as PostgreSQL
-
-    User->>Front: PDF をアップロードして実行
-    Front->>Router: POST /api/executions?workflow_id=...
-    Router->>Router: ファイル保存
-    Router->>Service: start_execution(workflow_id, file_path)
-    Service->>DB: execution 作成
-    Service->>DB: commit
-    Service->>Dispatcher: dispatch(execution_id, handler)
-    Dispatcher->>BG: add_task(...)
-    Router-->>Front: 201 Created
-    BG->>Service: process_workflow_execution(execution_id)
-    Service->>DB: 状態更新 / 結果保存
-```
 
 ## ディレクトリ構成
 
