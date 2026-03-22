@@ -1,4 +1,4 @@
-from fastapi import Depends
+from fastapi import Depends, BackgroundTasks
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from infra.db.database import get_db_session
@@ -8,6 +8,8 @@ from domain.repositories.workflow_repository import WorkflowRepository
 from domain.repositories.execution_repository import ExecutionRepository
 from services.workflow_service import WorkflowService
 from services.execution_service import ExecutionService
+from services.execution_dispatcher import ExecutionDispatcher
+from services.background_tasks_execution_dispatcher import BackgroundTasksExecutionDispatcher
 
 def get_workflow_repository(
     session: AsyncSession = Depends(get_db_session)
@@ -27,9 +29,17 @@ def get_workflow_service(
     """Get workflow service with injected dependencies"""
     return WorkflowService(workflow_repo)
 
+def get_execution_dispatcher(
+    background_tasks: BackgroundTasks,
+) -> ExecutionDispatcher:
+    """Get the execution dispatcher for the current request."""
+    return BackgroundTasksExecutionDispatcher(background_tasks)
+
 def get_execution_service(
+    session: AsyncSession = Depends(get_db_session),
     execution_repo: ExecutionRepository = Depends(get_execution_repository),
-    workflow_repo: WorkflowRepository = Depends(get_workflow_repository)
+    workflow_repo: WorkflowRepository = Depends(get_workflow_repository),
+    dispatcher: ExecutionDispatcher = Depends(get_execution_dispatcher),
 ) -> ExecutionService:
     """Get execution service with injected dependencies"""
-    return ExecutionService(execution_repo, workflow_repo)
+    return ExecutionService(execution_repo, workflow_repo, dispatcher, session)
