@@ -1,0 +1,1010 @@
+2026-03-19 22:43:08,758 - layerx.test.main - INFO - [test_logging.py:26] - Application started successfully
+2026-03-19 22:43:08,758 - layerx.test.main - WARNING - [test_logging.py:27] - This is a test warning
+2026-03-19 22:43:08,758 - layerx.test.main - ERROR - [test_logging.py:28] - This is a test error
+2026-03-19 22:43:08,758 - layerx.test.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': 'test-workflow-123', 'file_name': 'sample.pdf', 'file_content_type': 'application/pdf', 'file_size': 1024000}
+2026-03-19 22:43:08,759 - layerx.test.execution - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'exec-123', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-19 22:43:08,759 - layerx.test.execution - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'exec-123', 'step': 'workflow_loaded', 'workflow_name': 'Sample Workflow', 'node_count': 3, 'node_types': ['extract_text', 'generative_ai', 'formatter']}
+2026-03-19 22:44:01,109 - layerx.test.main - INFO - [test_logging.py:26] - Application started successfully
+2026-03-19 22:44:01,109 - layerx.test.main - WARNING - [test_logging.py:27] - This is a test warning
+2026-03-19 22:44:01,109 - layerx.test.main - ERROR - [test_logging.py:28] - This is a test error
+2026-03-19 22:44:01,109 - layerx.test.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': 'test-workflow-123', 'file_name': 'sample.pdf', 'file_content_type': 'application/pdf', 'file_size': 1024000}
+2026-03-19 22:44:01,109 - layerx.test.execution - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'exec-123', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-19 22:44:01,109 - layerx.test.execution - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'exec-123', 'step': 'workflow_loaded', 'workflow_name': 'Sample Workflow', 'node_count': 3, 'node_types': ['extract_text', 'generative_ai', 'formatter']}
+2026-03-19 22:44:01,109 - layerx.test.execution - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'exec-123', 'step': 'node_processing_start', 'node_name': 'PDF Extractor', 'node_type': 'extract_text', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 45}
+2026-03-19 22:44:01,109 - layerx.test.execution - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'exec-123', 'step': 'node_processing_complete', 'node_name': 'PDF Extractor', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 1250}
+2026-03-19 22:44:01,109 - layerx.test.execution - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'exec-123', 'step': 'workflow_execution_complete', 'final_output_length': 2048, 'nodes_processed': 3}
+2026-03-19 22:44:01,109 - layerx.test.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'test_sensitive', 'timestamp': None, 'workflow_id': 'test-123', 'safe_data': 'should-appear'}
+2026-03-19 22:47:42,935 - layerx.main - INFO - [main.py:58] - Starting LayerX Workflow Engine...
+2026-03-19 22:47:42,973 - layerx.main - INFO - [main.py:60] - Database tables initialized successfully
+2026-03-19 22:48:05,957 - layerx.main - INFO - [main.py:58] - Starting LayerX Workflow Engine...
+2026-03-19 22:48:05,972 - layerx.main - INFO - [main.py:60] - Database tables initialized successfully
+2026-03-19 22:48:57,609 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1773920719420', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-19 22:48:57,609 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/e256234c-ce7a-4d66-86d7-131a0197c489.pdf
+2026-03-19 22:48:57,610 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/e256234c-ce7a-4d66-86d7-131a0197c489.pdf (264630 bytes)
+2026-03-19 22:48:57,610 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1773920719420', 'input_file_path': 'uploads/e256234c-ce7a-4d66-86d7-131a0197c489.pdf', 'has_file': True}
+2026-03-19 22:48:57,622 - layerx.execution.service - WARNING - [execution_service.py:36] - Workflow not found: 1773920719420
+2026-03-19 22:48:57,622 - layerx.execution.router - WARNING - [executions.py:78] - Execution creation failed, cleaning up file: uploads/e256234c-ce7a-4d66-86d7-131a0197c489.pdf
+2026-03-19 22:48:58,265 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1773920719420', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-19 22:48:58,265 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/e97f05b9-581d-4384-9d22-5a6a4323baeb.pdf
+2026-03-19 22:48:58,268 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/e97f05b9-581d-4384-9d22-5a6a4323baeb.pdf (264630 bytes)
+2026-03-19 22:48:58,268 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1773920719420', 'input_file_path': 'uploads/e97f05b9-581d-4384-9d22-5a6a4323baeb.pdf', 'has_file': True}
+2026-03-19 22:48:58,270 - layerx.execution.service - WARNING - [execution_service.py:36] - Workflow not found: 1773920719420
+2026-03-19 22:48:58,270 - layerx.execution.router - WARNING - [executions.py:78] - Execution creation failed, cleaning up file: uploads/e97f05b9-581d-4384-9d22-5a6a4323baeb.pdf
+2026-03-19 22:48:58,411 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1773920719420', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-19 22:48:58,411 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/3b1afef2-3dca-433e-91d0-58d6d357efe7.pdf
+2026-03-19 22:48:58,413 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/3b1afef2-3dca-433e-91d0-58d6d357efe7.pdf (264630 bytes)
+2026-03-19 22:48:58,413 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1773920719420', 'input_file_path': 'uploads/3b1afef2-3dca-433e-91d0-58d6d357efe7.pdf', 'has_file': True}
+2026-03-19 22:48:58,416 - layerx.execution.service - WARNING - [execution_service.py:36] - Workflow not found: 1773920719420
+2026-03-19 22:48:58,416 - layerx.execution.router - WARNING - [executions.py:78] - Execution creation failed, cleaning up file: uploads/3b1afef2-3dca-433e-91d0-58d6d357efe7.pdf
+2026-03-19 22:48:58,542 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1773920719420', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-19 22:48:58,543 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/76957240-33d8-4917-ab4f-7f9944de301a.pdf
+2026-03-19 22:48:58,543 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/76957240-33d8-4917-ab4f-7f9944de301a.pdf (264630 bytes)
+2026-03-19 22:48:58,543 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1773920719420', 'input_file_path': 'uploads/76957240-33d8-4917-ab4f-7f9944de301a.pdf', 'has_file': True}
+2026-03-19 22:48:58,545 - layerx.execution.service - WARNING - [execution_service.py:36] - Workflow not found: 1773920719420
+2026-03-19 22:48:58,545 - layerx.execution.router - WARNING - [executions.py:78] - Execution creation failed, cleaning up file: uploads/76957240-33d8-4917-ab4f-7f9944de301a.pdf
+2026-03-19 22:49:53,220 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1773920961535', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-19 22:49:53,221 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/713f6f81-4943-4edc-b925-7b9b116698be.pdf
+2026-03-19 22:49:53,222 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/713f6f81-4943-4edc-b925-7b9b116698be.pdf (264630 bytes)
+2026-03-19 22:49:53,222 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1773920961535', 'input_file_path': 'uploads/713f6f81-4943-4edc-b925-7b9b116698be.pdf', 'has_file': True}
+2026-03-19 22:49:53,225 - layerx.execution.service - WARNING - [execution_service.py:36] - Workflow not found: 1773920961535
+2026-03-19 22:49:53,225 - layerx.execution.router - WARNING - [executions.py:78] - Execution creation failed, cleaning up file: uploads/713f6f81-4943-4edc-b925-7b9b116698be.pdf
+2026-03-19 22:51:18,890 - layerx.main - INFO - [main.py:58] - Starting LayerX Workflow Engine...
+2026-03-19 22:51:18,925 - layerx.main - INFO - [main.py:60] - Database tables initialized successfully
+2026-03-19 22:52:02,390 - layerx.main - INFO - [main.py:58] - Starting LayerX Workflow Engine...
+2026-03-19 22:52:02,401 - layerx.main - INFO - [main.py:60] - Database tables initialized successfully
+2026-03-19 22:53:57,567 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1773920961535', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-19 22:53:57,569 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/e9a2748c-0fde-4862-9c92-c3fb8186aaab.pdf
+2026-03-19 22:53:57,570 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/e9a2748c-0fde-4862-9c92-c3fb8186aaab.pdf (264630 bytes)
+2026-03-19 22:53:57,570 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1773920961535', 'input_file_path': 'uploads/e9a2748c-0fde-4862-9c92-c3fb8186aaab.pdf', 'has_file': True}
+2026-03-19 22:53:57,602 - layerx.execution.service - WARNING - [execution_service.py:36] - Workflow not found: 1773920961535
+2026-03-19 22:53:57,602 - layerx.execution.router - WARNING - [executions.py:78] - Execution creation failed, cleaning up file: uploads/e9a2748c-0fde-4862-9c92-c3fb8186aaab.pdf
+2026-03-19 22:53:58,323 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1773920961535', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-19 22:53:58,323 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/63b541a6-35e3-4bb8-91ce-9cc79db86c54.pdf
+2026-03-19 22:53:58,324 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/63b541a6-35e3-4bb8-91ce-9cc79db86c54.pdf (264630 bytes)
+2026-03-19 22:53:58,324 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1773920961535', 'input_file_path': 'uploads/63b541a6-35e3-4bb8-91ce-9cc79db86c54.pdf', 'has_file': True}
+2026-03-19 22:53:58,327 - layerx.execution.service - WARNING - [execution_service.py:36] - Workflow not found: 1773920961535
+2026-03-19 22:53:58,328 - layerx.execution.router - WARNING - [executions.py:78] - Execution creation failed, cleaning up file: uploads/63b541a6-35e3-4bb8-91ce-9cc79db86c54.pdf
+2026-03-19 22:53:58,468 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1773920961535', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-19 22:53:58,468 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/61d1a0ca-5123-41f7-8ef7-316224a9b623.pdf
+2026-03-19 22:53:58,468 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/61d1a0ca-5123-41f7-8ef7-316224a9b623.pdf (264630 bytes)
+2026-03-19 22:53:58,468 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1773920961535', 'input_file_path': 'uploads/61d1a0ca-5123-41f7-8ef7-316224a9b623.pdf', 'has_file': True}
+2026-03-19 22:53:58,470 - layerx.execution.service - WARNING - [execution_service.py:36] - Workflow not found: 1773920961535
+2026-03-19 22:53:58,470 - layerx.execution.router - WARNING - [executions.py:78] - Execution creation failed, cleaning up file: uploads/61d1a0ca-5123-41f7-8ef7-316224a9b623.pdf
+2026-03-19 22:54:03,167 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1773920961535', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-19 22:54:03,168 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/9234a0ee-d6fe-490e-997c-142824fdd291.pdf
+2026-03-19 22:54:03,169 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/9234a0ee-d6fe-490e-997c-142824fdd291.pdf (264630 bytes)
+2026-03-19 22:54:03,169 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1773920961535', 'input_file_path': 'uploads/9234a0ee-d6fe-490e-997c-142824fdd291.pdf', 'has_file': True}
+2026-03-19 22:54:03,172 - layerx.execution.service - WARNING - [execution_service.py:36] - Workflow not found: 1773920961535
+2026-03-19 22:54:03,172 - layerx.execution.router - WARNING - [executions.py:78] - Execution creation failed, cleaning up file: uploads/9234a0ee-d6fe-490e-997c-142824fdd291.pdf
+2026-03-19 22:54:11,165 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1773920961535', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-19 22:54:11,166 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/3e4d8793-6a16-435f-a91b-4b3d44c4b99e.pdf
+2026-03-19 22:54:11,167 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/3e4d8793-6a16-435f-a91b-4b3d44c4b99e.pdf (264630 bytes)
+2026-03-19 22:54:11,167 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1773920961535', 'input_file_path': 'uploads/3e4d8793-6a16-435f-a91b-4b3d44c4b99e.pdf', 'has_file': True}
+2026-03-19 22:54:11,172 - layerx.execution.service - WARNING - [execution_service.py:36] - Workflow not found: 1773920961535
+2026-03-19 22:54:11,172 - layerx.execution.router - WARNING - [executions.py:78] - Execution creation failed, cleaning up file: uploads/3e4d8793-6a16-435f-a91b-4b3d44c4b99e.pdf
+2026-03-19 22:54:11,961 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1773920961535', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-19 22:54:11,962 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/9413289a-409b-49b7-9f48-a2cf1a872638.pdf
+2026-03-19 22:54:11,966 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/9413289a-409b-49b7-9f48-a2cf1a872638.pdf (264630 bytes)
+2026-03-19 22:54:11,968 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1773920961535', 'input_file_path': 'uploads/9413289a-409b-49b7-9f48-a2cf1a872638.pdf', 'has_file': True}
+2026-03-19 22:54:11,969 - layerx.execution.service - WARNING - [execution_service.py:36] - Workflow not found: 1773920961535
+2026-03-19 22:54:11,969 - layerx.execution.router - WARNING - [executions.py:78] - Execution creation failed, cleaning up file: uploads/9413289a-409b-49b7-9f48-a2cf1a872638.pdf
+2026-03-19 22:54:12,111 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1773920961535', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-19 22:54:12,112 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/4f17081a-3ca4-4016-a6bc-6ef20ce4702a.pdf
+2026-03-19 22:54:12,112 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/4f17081a-3ca4-4016-a6bc-6ef20ce4702a.pdf (264630 bytes)
+2026-03-19 22:54:12,112 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1773920961535', 'input_file_path': 'uploads/4f17081a-3ca4-4016-a6bc-6ef20ce4702a.pdf', 'has_file': True}
+2026-03-19 22:54:12,115 - layerx.execution.service - WARNING - [execution_service.py:36] - Workflow not found: 1773920961535
+2026-03-19 22:54:12,115 - layerx.execution.router - WARNING - [executions.py:78] - Execution creation failed, cleaning up file: uploads/4f17081a-3ca4-4016-a6bc-6ef20ce4702a.pdf
+2026-03-19 22:54:12,244 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1773920961535', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-19 22:54:12,244 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/e531dcf1-55f6-4c10-ae0d-3a4475d45fae.pdf
+2026-03-19 22:54:12,244 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/e531dcf1-55f6-4c10-ae0d-3a4475d45fae.pdf (264630 bytes)
+2026-03-19 22:54:12,245 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1773920961535', 'input_file_path': 'uploads/e531dcf1-55f6-4c10-ae0d-3a4475d45fae.pdf', 'has_file': True}
+2026-03-19 22:54:12,247 - layerx.execution.service - WARNING - [execution_service.py:36] - Workflow not found: 1773920961535
+2026-03-19 22:54:12,247 - layerx.execution.router - WARNING - [executions.py:78] - Execution creation failed, cleaning up file: uploads/e531dcf1-55f6-4c10-ae0d-3a4475d45fae.pdf
+2026-03-19 22:55:38,993 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1773918884449', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-19 22:55:38,995 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/2b3cbc03-287a-47b6-99bf-6c849ce64f25.pdf
+2026-03-19 22:55:38,996 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/2b3cbc03-287a-47b6-99bf-6c849ce64f25.pdf (264630 bytes)
+2026-03-19 22:55:38,997 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1773918884449', 'input_file_path': 'uploads/2b3cbc03-287a-47b6-99bf-6c849ce64f25.pdf', 'has_file': True}
+2026-03-19 22:55:39,002 - layerx.execution.service - INFO - [execution_service.py:40] - Found workflow: PDF Processing Workflow with 3 nodes
+2026-03-19 22:55:39,029 - layerx.execution.service - INFO - [execution_service.py:55] - Created execution: 05e60b3f-bf02-4437-8598-413df31ce956
+2026-03-19 22:55:39,029 - layerx.execution.router - INFO - [executions.py:88] - Starting background processing for execution: 05e60b3f-bf02-4437-8598-413df31ce956
+2026-03-19 22:55:39,179 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '05e60b3f-bf02-4437-8598-413df31ce956', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-19 22:55:39,181 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '05e60b3f-bf02-4437-8598-413df31ce956', 'step': 'execution_retrieved', 'workflow_id': '1773918884449', 'input_file_path': 'uploads/2b3cbc03-287a-47b6-99bf-6c849ce64f25.pdf', 'status': 'PENDING'}
+2026-03-19 22:55:39,181 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '05e60b3f-bf02-4437-8598-413df31ce956', 'step': 'status_update', 'new_status': 'RUNNING', 'has_output_data': False, 'has_error': False, 'output_data_length': 0}
+2026-03-19 22:55:39,182 - layerx.execution.service - INFO - [execution_service.py:99] - Execution 05e60b3f-bf02-4437-8598-413df31ce956 started running
+2026-03-19 22:55:39,189 - layerx.execution.service - INFO - [execution_service.py:108] - Execution 05e60b3f-bf02-4437-8598-413df31ce956 status updated from PENDING to RUNNING
+2026-03-19 22:55:39,190 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '05e60b3f-bf02-4437-8598-413df31ce956', 'step': 'workflow_loaded', 'workflow_name': 'PDF Processing Workflow', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI', 'FORMATTER']}
+2026-03-19 22:55:39,190 - layerx.execution.processor - INFO - [executions.py:186] - Starting node processing for execution 05e60b3f-bf02-4437-8598-413df31ce956 with input: uploads/2b3cbc03-287a-47b6-99bf-6c849ce64f25.pdf
+2026-03-19 22:55:39,191 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '05e60b3f-bf02-4437-8598-413df31ce956', 'step': 'node_processing_start', 'node_name': 'Extract Text', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-19 22:55:39,592 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '05e60b3f-bf02-4437-8598-413df31ce956', 'step': 'node_processing_complete', 'node_name': 'Extract Text', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 12887}
+2026-03-19 22:55:39,592 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '05e60b3f-bf02-4437-8598-413df31ce956', 'step': 'node_processing_start', 'node_name': 'AI Processor', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/3', 'input_data_type': 'str', 'input_data_length': 12887}
+2026-03-19 22:55:42,454 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '05e60b3f-bf02-4437-8598-413df31ce956', 'step': 'node_processing_complete', 'node_name': 'AI Processor', 'node_step': '2/3', 'output_data_type': 'str', 'output_data_length': 288}
+2026-03-19 22:55:42,455 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '05e60b3f-bf02-4437-8598-413df31ce956', 'step': 'node_processing_start', 'node_name': 'Formatter', 'node_type': 'FORMATTER', 'node_order': 2, 'node_step': '3/3', 'input_data_type': 'str', 'input_data_length': 288}
+2026-03-19 22:55:42,455 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '05e60b3f-bf02-4437-8598-413df31ce956', 'step': 'node_processing_complete', 'node_name': 'Formatter', 'node_step': '3/3', 'output_data_type': 'str', 'output_data_length': 288}
+2026-03-19 22:55:42,455 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '05e60b3f-bf02-4437-8598-413df31ce956', 'step': 'workflow_execution_complete', 'final_output_length': 288, 'nodes_processed': 3}
+2026-03-19 22:55:42,455 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '05e60b3f-bf02-4437-8598-413df31ce956', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 288}
+2026-03-19 22:55:42,458 - layerx.execution.service - INFO - [execution_service.py:102] - Execution 05e60b3f-bf02-4437-8598-413df31ce956 completed successfully with 288 chars output
+2026-03-19 22:55:42,463 - layerx.execution.service - INFO - [execution_service.py:108] - Execution 05e60b3f-bf02-4437-8598-413df31ce956 status updated from RUNNING to COMPLETED
+2026-03-19 23:35:36,236 - layerx.main - INFO - [main.py:58] - Starting LayerX Workflow Engine...
+2026-03-19 23:35:36,284 - layerx.main - INFO - [main.py:60] - Database tables initialized successfully
+2026-03-19 23:35:52,621 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1773920322507', 'file_name': 'CTWD Assignment 1.pdf', 'file_content_type': 'application/pdf', 'file_size': 43841}
+2026-03-19 23:35:52,623 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/a2814329-f3e7-4429-b39b-cb3aec50869d.pdf
+2026-03-19 23:35:52,624 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/a2814329-f3e7-4429-b39b-cb3aec50869d.pdf (43841 bytes)
+2026-03-19 23:35:52,624 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1773920322507', 'input_file_path': 'uploads/a2814329-f3e7-4429-b39b-cb3aec50869d.pdf', 'has_file': True}
+2026-03-19 23:35:52,629 - layerx.execution.service - WARNING - [execution_service.py:36] - Workflow not found: 1773920322507
+2026-03-19 23:35:52,629 - layerx.execution.router - WARNING - [executions.py:78] - Execution creation failed, cleaning up file: uploads/a2814329-f3e7-4429-b39b-cb3aec50869d.pdf
+2026-03-19 23:35:53,594 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1773920322507', 'file_name': 'CTWD Assignment 1.pdf', 'file_content_type': 'application/pdf', 'file_size': 43841}
+2026-03-19 23:35:53,594 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/ecac10f6-03e4-4ebf-bd80-6f2977721aac.pdf
+2026-03-19 23:35:53,595 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/ecac10f6-03e4-4ebf-bd80-6f2977721aac.pdf (43841 bytes)
+2026-03-19 23:35:53,595 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1773920322507', 'input_file_path': 'uploads/ecac10f6-03e4-4ebf-bd80-6f2977721aac.pdf', 'has_file': True}
+2026-03-19 23:35:53,598 - layerx.execution.service - WARNING - [execution_service.py:36] - Workflow not found: 1773920322507
+2026-03-19 23:35:53,599 - layerx.execution.router - WARNING - [executions.py:78] - Execution creation failed, cleaning up file: uploads/ecac10f6-03e4-4ebf-bd80-6f2977721aac.pdf
+2026-03-19 23:36:05,343 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1773913753232', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-19 23:36:05,344 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/25f254da-102e-40aa-94f6-3e5e82551aa2.pdf
+2026-03-19 23:36:05,344 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/25f254da-102e-40aa-94f6-3e5e82551aa2.pdf (264630 bytes)
+2026-03-19 23:36:05,344 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1773913753232', 'input_file_path': 'uploads/25f254da-102e-40aa-94f6-3e5e82551aa2.pdf', 'has_file': True}
+2026-03-19 23:36:05,348 - layerx.execution.service - WARNING - [execution_service.py:36] - Workflow not found: 1773913753232
+2026-03-19 23:36:05,349 - layerx.execution.router - WARNING - [executions.py:78] - Execution creation failed, cleaning up file: uploads/25f254da-102e-40aa-94f6-3e5e82551aa2.pdf
+2026-03-19 23:36:17,808 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1773918884449', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-19 23:36:17,810 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/183e60ad-ef25-4adc-b869-a7a20f2affe0.pdf
+2026-03-19 23:36:17,810 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/183e60ad-ef25-4adc-b869-a7a20f2affe0.pdf (264630 bytes)
+2026-03-19 23:36:17,811 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1773918884449', 'input_file_path': 'uploads/183e60ad-ef25-4adc-b869-a7a20f2affe0.pdf', 'has_file': True}
+2026-03-19 23:36:17,816 - layerx.execution.service - INFO - [execution_service.py:40] - Found workflow: PDF Processing Workflow with 3 nodes
+2026-03-19 23:36:17,826 - layerx.execution.service - INFO - [execution_service.py:55] - Created execution: 9ece723f-0816-4328-8165-6e6dce3bdf81
+2026-03-19 23:36:17,826 - layerx.execution.router - INFO - [executions.py:88] - Starting background processing for execution: 9ece723f-0816-4328-8165-6e6dce3bdf81
+2026-03-19 23:36:17,929 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '9ece723f-0816-4328-8165-6e6dce3bdf81', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-19 23:36:17,930 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '9ece723f-0816-4328-8165-6e6dce3bdf81', 'step': 'execution_retrieved', 'workflow_id': '1773918884449', 'input_file_path': 'uploads/183e60ad-ef25-4adc-b869-a7a20f2affe0.pdf', 'status': 'PENDING'}
+2026-03-19 23:36:17,930 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '9ece723f-0816-4328-8165-6e6dce3bdf81', 'step': 'status_update', 'new_status': 'RUNNING', 'has_output_data': False, 'has_error': False, 'output_data_length': 0}
+2026-03-19 23:36:17,931 - layerx.execution.service - INFO - [execution_service.py:99] - Execution 9ece723f-0816-4328-8165-6e6dce3bdf81 started running
+2026-03-19 23:36:17,937 - layerx.execution.service - INFO - [execution_service.py:108] - Execution 9ece723f-0816-4328-8165-6e6dce3bdf81 status updated from PENDING to RUNNING
+2026-03-19 23:36:17,938 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '9ece723f-0816-4328-8165-6e6dce3bdf81', 'step': 'workflow_loaded', 'workflow_name': 'PDF Processing Workflow', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI', 'FORMATTER']}
+2026-03-19 23:36:17,938 - layerx.execution.processor - INFO - [executions.py:186] - Starting node processing for execution 9ece723f-0816-4328-8165-6e6dce3bdf81 with input: uploads/183e60ad-ef25-4adc-b869-a7a20f2affe0.pdf
+2026-03-19 23:36:17,938 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '9ece723f-0816-4328-8165-6e6dce3bdf81', 'step': 'node_processing_start', 'node_name': 'Extract Text', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-19 23:36:18,337 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '9ece723f-0816-4328-8165-6e6dce3bdf81', 'step': 'node_processing_complete', 'node_name': 'Extract Text', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 12887}
+2026-03-19 23:36:18,337 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '9ece723f-0816-4328-8165-6e6dce3bdf81', 'step': 'node_processing_start', 'node_name': 'AI Processor', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/3', 'input_data_type': 'str', 'input_data_length': 12887}
+2026-03-19 23:36:21,032 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '9ece723f-0816-4328-8165-6e6dce3bdf81', 'step': 'node_processing_complete', 'node_name': 'AI Processor', 'node_step': '2/3', 'output_data_type': 'str', 'output_data_length': 334}
+2026-03-19 23:36:21,033 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '9ece723f-0816-4328-8165-6e6dce3bdf81', 'step': 'node_processing_start', 'node_name': 'Formatter', 'node_type': 'FORMATTER', 'node_order': 2, 'node_step': '3/3', 'input_data_type': 'str', 'input_data_length': 334}
+2026-03-19 23:36:21,033 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '9ece723f-0816-4328-8165-6e6dce3bdf81', 'step': 'node_processing_complete', 'node_name': 'Formatter', 'node_step': '3/3', 'output_data_type': 'str', 'output_data_length': 334}
+2026-03-19 23:36:21,033 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '9ece723f-0816-4328-8165-6e6dce3bdf81', 'step': 'workflow_execution_complete', 'final_output_length': 334, 'nodes_processed': 3}
+2026-03-19 23:36:21,033 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '9ece723f-0816-4328-8165-6e6dce3bdf81', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 334}
+2026-03-19 23:36:21,047 - layerx.execution.service - INFO - [execution_service.py:102] - Execution 9ece723f-0816-4328-8165-6e6dce3bdf81 completed successfully with 334 chars output
+2026-03-19 23:36:21,053 - layerx.execution.service - INFO - [execution_service.py:108] - Execution 9ece723f-0816-4328-8165-6e6dce3bdf81 status updated from RUNNING to COMPLETED
+2026-03-19 23:54:44,989 - layerx.main - INFO - [main.py:58] - Starting LayerX Workflow Engine...
+2026-03-19 23:54:45,020 - layerx.main - INFO - [main.py:60] - Database tables initialized successfully
+2026-03-19 23:55:18,782 - layerx.main - INFO - [main.py:58] - Starting LayerX Workflow Engine...
+2026-03-19 23:55:18,799 - layerx.main - INFO - [main.py:60] - Database tables initialized successfully
+2026-03-19 23:56:53,778 - layerx.main - INFO - [main.py:58] - Starting LayerX Workflow Engine...
+2026-03-19 23:56:53,816 - layerx.main - INFO - [main.py:60] - Database tables initialized successfully
+2026-03-19 23:57:15,835 - layerx.main - INFO - [main.py:58] - Starting LayerX Workflow Engine...
+2026-03-19 23:57:15,884 - layerx.main - INFO - [main.py:60] - Database tables initialized successfully
+2026-03-19 23:57:37,426 - layerx.main - INFO - [main.py:58] - Starting LayerX Workflow Engine...
+2026-03-19 23:57:37,441 - layerx.main - INFO - [main.py:60] - Database tables initialized successfully
+2026-03-19 23:58:15,571 - layerx.main - INFO - [main.py:58] - Starting LayerX Workflow Engine...
+2026-03-19 23:58:15,587 - layerx.main - INFO - [main.py:60] - Database tables initialized successfully
+2026-03-20 14:16:23,751 - layerx.main - INFO - [main.py:58] - Starting LayerX Workflow Engine...
+2026-03-20 14:16:23,787 - layerx.main - INFO - [main.py:60] - Database tables initialized successfully
+2026-03-21 15:45:56,244 - layerx.main - INFO - [main.py:59] - Starting LayerX Workflow Engine...
+2026-03-21 15:45:56,270 - layerx.main - INFO - [main.py:61] - Database tables initialized successfully
+2026-03-21 15:47:10,041 - layerx.main - INFO - [main.py:59] - Starting LayerX Workflow Engine...
+2026-03-21 15:47:10,140 - layerx.main - INFO - [main.py:61] - Database tables initialized successfully
+2026-03-21 16:03:10,819 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': 'a3128fe4-cb5e-4a16-94a9-745fc49dbc64', 'file_name': 'CTWD Assignment 1.pdf', 'file_content_type': 'application/pdf', 'file_size': 43841}
+2026-03-21 16:03:10,825 - layerx.execution.router - INFO - [executions.py:58] - Saving uploaded file to: uploads/b8e83dc6-b180-40b4-b8f6-37ab43e3b32b.pdf
+2026-03-21 16:03:10,827 - layerx.execution.router - INFO - [executions.py:66] - File saved successfully: uploads/b8e83dc6-b180-40b4-b8f6-37ab43e3b32b.pdf (43841 bytes)
+2026-03-21 16:03:10,827 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': 'a3128fe4-cb5e-4a16-94a9-745fc49dbc64', 'input_file_path': 'uploads/b8e83dc6-b180-40b4-b8f6-37ab43e3b32b.pdf', 'has_file': True}
+2026-03-21 16:03:10,842 - layerx.execution.service - INFO - [execution_service.py:40] - Found workflow: aa with 2 nodes
+2026-03-21 16:03:10,865 - layerx.execution.service - INFO - [execution_service.py:55] - Created execution: 393378bb-6cc7-46e3-bfef-57a8b9a0a217
+2026-03-21 16:03:10,865 - layerx.execution.router - INFO - [executions.py:88] - Starting background processing for execution: 393378bb-6cc7-46e3-bfef-57a8b9a0a217
+2026-03-21 16:07:38,211 - layerx.main - INFO - [main.py:59] - Starting LayerX Workflow Engine...
+2026-03-21 16:07:38,264 - layerx.main - INFO - [main.py:61] - Database tables initialized successfully
+2026-03-21 16:07:57,136 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'order': 0}
+2026-03-21 16:08:12,635 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'order': 1}
+2026-03-21 16:08:18,631 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'node_name': 'aaaa', 'node_type': 'FORMATTER', 'order': 2}
+2026-03-21 16:08:18,636 - layerx.workflow.router - ERROR - [workflows.py:81] - Node validation failed for workflow_id=dfa252c7-91d2-455f-88de-9aa4945232cb node_type=FORMATTER node_name=aaaa
+Traceback (most recent call last):
+  File "/Users/yugo/Desktop/LayerX/server/api/routers/workflows.py", line 73, in add_node
+    node = await service.add_node(workflow_id, request)
+  File "/Users/yugo/Desktop/LayerX/server/services/workflow_service.py", line 41, in add_node
+    node = Node.create(
+  File "/Users/yugo/Desktop/LayerX/server/domain/entities/node.py", line 45, in create
+    node.validate_configuration()
+  File "/Users/yugo/Desktop/LayerX/server/domain/entities/node.py", line 55, in validate_configuration
+    self._validate_formatter_configuration()
+  File "/Users/yugo/Desktop/LayerX/server/domain/entities/node.py", line 97, in _validate_formatter_configuration
+    raise ValueError(f"FORMATTER node requires '{key}' in configuration")
+ValueError: FORMATTER node requires 'format_type' in configuration
+2026-03-21 16:13:24,224 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'node_name': 'aaaa', 'node_type': 'FORMATTER', 'order': 2}
+2026-03-21 16:13:32,064 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'file_name': 'CTWD Assignment 1.pdf', 'file_content_type': 'application/pdf', 'file_size': 43841}
+2026-03-21 16:13:32,067 - layerx.execution.router - INFO - [executions.py:39] - File saved successfully: uploads/a7c7aef4-dae9-4a91-9527-0b09349eb609.pdf
+2026-03-21 16:13:32,067 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/a7c7aef4-dae9-4a91-9527-0b09349eb609.pdf', 'has_file': True}
+2026-03-21 16:13:32,073 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: test2 with 3 nodes
+2026-03-21 16:13:32,087 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: 3d9082f4-de8c-448a-98df-11af1192664f
+2026-03-21 16:13:32,087 - layerx.execution.router - INFO - [executions.py:52] - Starting background processing for execution: 3d9082f4-de8c-448a-98df-11af1192664f
+2026-03-21 16:13:32,241 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '3d9082f4-de8c-448a-98df-11af1192664f', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-21 16:13:32,244 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '3d9082f4-de8c-448a-98df-11af1192664f', 'step': 'execution_retrieved', 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/a7c7aef4-dae9-4a91-9527-0b09349eb609.pdf', 'status': 'PENDING'}
+2026-03-21 16:13:32,244 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '3d9082f4-de8c-448a-98df-11af1192664f', 'step': 'status_update', 'new_status': 'RUNNING', 'has_output_data': False, 'has_error': False, 'output_data_length': 0}
+2026-03-21 16:13:32,244 - layerx.execution.service - INFO - [execution_service.py:101] - Execution 3d9082f4-de8c-448a-98df-11af1192664f started running
+2026-03-21 16:13:32,250 - layerx.execution.service - INFO - [execution_service.py:110] - Execution 3d9082f4-de8c-448a-98df-11af1192664f status updated from PENDING to RUNNING
+2026-03-21 16:13:32,253 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '3d9082f4-de8c-448a-98df-11af1192664f', 'step': 'workflow_loaded', 'workflow_name': 'test2', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI', 'FORMATTER']}
+2026-03-21 16:13:32,253 - layerx.execution.processor - INFO - [executions.py:150] - Starting node processing for execution 3d9082f4-de8c-448a-98df-11af1192664f with input: uploads/a7c7aef4-dae9-4a91-9527-0b09349eb609.pdf
+2026-03-21 16:13:32,253 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '3d9082f4-de8c-448a-98df-11af1192664f', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-21 16:13:32,305 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '3d9082f4-de8c-448a-98df-11af1192664f', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 1529}
+2026-03-21 16:13:32,305 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '3d9082f4-de8c-448a-98df-11af1192664f', 'step': 'node_processing_start', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/3', 'input_data_type': 'str', 'input_data_length': 1529}
+2026-03-21 16:13:35,521 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '3d9082f4-de8c-448a-98df-11af1192664f', 'step': 'node_processing_complete', 'node_name': 'aa', 'node_step': '2/3', 'output_data_type': 'str', 'output_data_length': 822}
+2026-03-21 16:13:35,521 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '3d9082f4-de8c-448a-98df-11af1192664f', 'step': 'node_processing_start', 'node_name': 'aaaa', 'node_type': 'FORMATTER', 'node_order': 2, 'node_step': '3/3', 'input_data_type': 'str', 'input_data_length': 822}
+2026-03-21 16:13:35,521 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '3d9082f4-de8c-448a-98df-11af1192664f', 'step': 'node_processing_complete', 'node_name': 'aaaa', 'node_step': '3/3', 'output_data_type': 'str', 'output_data_length': 822}
+2026-03-21 16:13:35,522 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '3d9082f4-de8c-448a-98df-11af1192664f', 'step': 'workflow_execution_complete', 'final_output_length': 822, 'nodes_processed': 3}
+2026-03-21 16:13:35,522 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '3d9082f4-de8c-448a-98df-11af1192664f', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 822}
+2026-03-21 16:13:35,524 - layerx.execution.service - INFO - [execution_service.py:104] - Execution 3d9082f4-de8c-448a-98df-11af1192664f completed successfully with 822 chars output
+2026-03-21 16:13:35,526 - layerx.execution.service - INFO - [execution_service.py:110] - Execution 3d9082f4-de8c-448a-98df-11af1192664f status updated from RUNNING to COMPLETED
+2026-03-21 16:14:41,455 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'file_name': 'COE (2).pdf', 'file_content_type': 'application/pdf', 'file_size': 94176}
+2026-03-21 16:14:41,457 - layerx.execution.router - INFO - [executions.py:39] - File saved successfully: uploads/8550e201-7fa9-477f-9597-333677e7e9bf.pdf
+2026-03-21 16:14:41,457 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/8550e201-7fa9-477f-9597-333677e7e9bf.pdf', 'has_file': True}
+2026-03-21 16:14:41,464 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: test2 with 3 nodes
+2026-03-21 16:14:41,468 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: 386a66aa-1861-4ab2-8574-a9977cbfb93f
+2026-03-21 16:14:41,469 - layerx.execution.router - INFO - [executions.py:52] - Starting background processing for execution: 386a66aa-1861-4ab2-8574-a9977cbfb93f
+2026-03-21 16:14:41,469 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '386a66aa-1861-4ab2-8574-a9977cbfb93f', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-21 16:14:41,470 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '386a66aa-1861-4ab2-8574-a9977cbfb93f', 'step': 'execution_retrieved', 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/8550e201-7fa9-477f-9597-333677e7e9bf.pdf', 'status': 'PENDING'}
+2026-03-21 16:14:41,470 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '386a66aa-1861-4ab2-8574-a9977cbfb93f', 'step': 'status_update', 'new_status': 'RUNNING', 'has_output_data': False, 'has_error': False, 'output_data_length': 0}
+2026-03-21 16:14:41,471 - layerx.execution.service - INFO - [execution_service.py:101] - Execution 386a66aa-1861-4ab2-8574-a9977cbfb93f started running
+2026-03-21 16:14:41,473 - layerx.execution.service - INFO - [execution_service.py:110] - Execution 386a66aa-1861-4ab2-8574-a9977cbfb93f status updated from PENDING to RUNNING
+2026-03-21 16:14:41,478 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '386a66aa-1861-4ab2-8574-a9977cbfb93f', 'step': 'workflow_loaded', 'workflow_name': 'test2', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI', 'FORMATTER']}
+2026-03-21 16:14:41,478 - layerx.execution.processor - INFO - [executions.py:150] - Starting node processing for execution 386a66aa-1861-4ab2-8574-a9977cbfb93f with input: uploads/8550e201-7fa9-477f-9597-333677e7e9bf.pdf
+2026-03-21 16:14:41,478 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '386a66aa-1861-4ab2-8574-a9977cbfb93f', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-21 16:14:41,487 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '386a66aa-1861-4ab2-8574-a9977cbfb93f', 'step': 'node_processing_failed', 'node_name': 'aaa', 'node_step': '1/3', 'error': 'Text extraction error: PDF text extraction failed: PyCryptodome is required for AES algorithm'}
+2026-03-21 16:14:41,487 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '386a66aa-1861-4ab2-8574-a9977cbfb93f', 'step': 'status_update', 'new_status': 'FAILED', 'has_output_data': False, 'has_error': True, 'output_data_length': 0}
+2026-03-21 16:14:41,488 - layerx.execution.service - ERROR - [execution_service.py:107] - Execution 386a66aa-1861-4ab2-8574-a9977cbfb93f failed: Error processing node aaa: Text extraction error: PDF text extraction failed: PyCryptodome is required for AES algorithm
+2026-03-21 16:14:41,491 - layerx.execution.service - INFO - [execution_service.py:110] - Execution 386a66aa-1861-4ab2-8574-a9977cbfb93f status updated from RUNNING to FAILED
+2026-03-21 16:15:10,463 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'file_name': 'Workshop 1 Docker.pdf', 'file_content_type': 'application/pdf', 'file_size': 59451}
+2026-03-21 16:15:10,464 - layerx.execution.router - INFO - [executions.py:39] - File saved successfully: uploads/da679dad-55ee-4126-9531-09a6abaeaec0.pdf
+2026-03-21 16:15:10,464 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/da679dad-55ee-4126-9531-09a6abaeaec0.pdf', 'has_file': True}
+2026-03-21 16:15:10,470 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: test2 with 3 nodes
+2026-03-21 16:15:10,473 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: 83ea118b-9815-4214-80d0-73190506d67c
+2026-03-21 16:15:10,473 - layerx.execution.router - INFO - [executions.py:52] - Starting background processing for execution: 83ea118b-9815-4214-80d0-73190506d67c
+2026-03-21 16:15:10,474 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '83ea118b-9815-4214-80d0-73190506d67c', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-21 16:15:10,477 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '83ea118b-9815-4214-80d0-73190506d67c', 'step': 'execution_retrieved', 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/da679dad-55ee-4126-9531-09a6abaeaec0.pdf', 'status': 'PENDING'}
+2026-03-21 16:15:10,477 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '83ea118b-9815-4214-80d0-73190506d67c', 'step': 'status_update', 'new_status': 'RUNNING', 'has_output_data': False, 'has_error': False, 'output_data_length': 0}
+2026-03-21 16:15:10,478 - layerx.execution.service - INFO - [execution_service.py:101] - Execution 83ea118b-9815-4214-80d0-73190506d67c started running
+2026-03-21 16:15:10,499 - layerx.execution.service - INFO - [execution_service.py:110] - Execution 83ea118b-9815-4214-80d0-73190506d67c status updated from PENDING to RUNNING
+2026-03-21 16:15:10,502 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '83ea118b-9815-4214-80d0-73190506d67c', 'step': 'workflow_loaded', 'workflow_name': 'test2', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI', 'FORMATTER']}
+2026-03-21 16:15:10,502 - layerx.execution.processor - INFO - [executions.py:150] - Starting node processing for execution 83ea118b-9815-4214-80d0-73190506d67c with input: uploads/da679dad-55ee-4126-9531-09a6abaeaec0.pdf
+2026-03-21 16:15:10,502 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '83ea118b-9815-4214-80d0-73190506d67c', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-21 16:15:10,583 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '83ea118b-9815-4214-80d0-73190506d67c', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 10641}
+2026-03-21 16:15:10,583 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '83ea118b-9815-4214-80d0-73190506d67c', 'step': 'node_processing_start', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/3', 'input_data_type': 'str', 'input_data_length': 10641}
+2026-03-21 16:15:12,703 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '83ea118b-9815-4214-80d0-73190506d67c', 'step': 'node_processing_complete', 'node_name': 'aa', 'node_step': '2/3', 'output_data_type': 'str', 'output_data_length': 459}
+2026-03-21 16:15:12,703 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '83ea118b-9815-4214-80d0-73190506d67c', 'step': 'node_processing_start', 'node_name': 'aaaa', 'node_type': 'FORMATTER', 'node_order': 2, 'node_step': '3/3', 'input_data_type': 'str', 'input_data_length': 459}
+2026-03-21 16:15:12,704 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '83ea118b-9815-4214-80d0-73190506d67c', 'step': 'node_processing_complete', 'node_name': 'aaaa', 'node_step': '3/3', 'output_data_type': 'str', 'output_data_length': 459}
+2026-03-21 16:15:12,704 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '83ea118b-9815-4214-80d0-73190506d67c', 'step': 'workflow_execution_complete', 'final_output_length': 459, 'nodes_processed': 3}
+2026-03-21 16:15:12,704 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '83ea118b-9815-4214-80d0-73190506d67c', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 459}
+2026-03-21 16:15:12,705 - layerx.execution.service - INFO - [execution_service.py:104] - Execution 83ea118b-9815-4214-80d0-73190506d67c completed successfully with 459 chars output
+2026-03-21 16:15:12,708 - layerx.execution.service - INFO - [execution_service.py:110] - Execution 83ea118b-9815-4214-80d0-73190506d67c status updated from RUNNING to COMPLETED
+2026-03-21 16:26:32,519 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'file_name': '退職後の流れ(2026年1月9日更新) .pdf', 'file_content_type': 'application/pdf', 'file_size': 190746}
+2026-03-21 16:26:32,522 - layerx.execution.router - INFO - [executions.py:39] - File saved successfully: uploads/8240816d-89d3-4ded-a57e-a1c7e6fbdd15.pdf
+2026-03-21 16:26:32,522 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/8240816d-89d3-4ded-a57e-a1c7e6fbdd15.pdf', 'has_file': True}
+2026-03-21 16:26:32,536 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: test2 with 3 nodes
+2026-03-21 16:26:32,544 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: 4c8e9ad8-6955-42cb-99be-5370dcd9932c
+2026-03-21 16:26:32,544 - layerx.execution.router - INFO - [executions.py:52] - Starting background processing for execution: 4c8e9ad8-6955-42cb-99be-5370dcd9932c
+2026-03-21 16:26:32,545 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '4c8e9ad8-6955-42cb-99be-5370dcd9932c', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-21 16:26:32,546 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '4c8e9ad8-6955-42cb-99be-5370dcd9932c', 'step': 'execution_retrieved', 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/8240816d-89d3-4ded-a57e-a1c7e6fbdd15.pdf', 'status': 'PENDING'}
+2026-03-21 16:26:32,546 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '4c8e9ad8-6955-42cb-99be-5370dcd9932c', 'step': 'status_update', 'new_status': 'RUNNING', 'has_output_data': False, 'has_error': False, 'output_data_length': 0}
+2026-03-21 16:26:32,547 - layerx.execution.service - INFO - [execution_service.py:101] - Execution 4c8e9ad8-6955-42cb-99be-5370dcd9932c started running
+2026-03-21 16:26:32,552 - layerx.execution.service - INFO - [execution_service.py:110] - Execution 4c8e9ad8-6955-42cb-99be-5370dcd9932c status updated from PENDING to RUNNING
+2026-03-21 16:26:32,554 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '4c8e9ad8-6955-42cb-99be-5370dcd9932c', 'step': 'workflow_loaded', 'workflow_name': 'test2', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI', 'FORMATTER']}
+2026-03-21 16:26:32,554 - layerx.execution.processor - INFO - [executions.py:150] - Starting node processing for execution 4c8e9ad8-6955-42cb-99be-5370dcd9932c with input: uploads/8240816d-89d3-4ded-a57e-a1c7e6fbdd15.pdf
+2026-03-21 16:26:32,554 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '4c8e9ad8-6955-42cb-99be-5370dcd9932c', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-21 16:26:32,777 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '4c8e9ad8-6955-42cb-99be-5370dcd9932c', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 4261}
+2026-03-21 16:26:32,777 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '4c8e9ad8-6955-42cb-99be-5370dcd9932c', 'step': 'node_processing_start', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/3', 'input_data_type': 'str', 'input_data_length': 4261}
+2026-03-21 16:26:35,537 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '4c8e9ad8-6955-42cb-99be-5370dcd9932c', 'step': 'node_processing_complete', 'node_name': 'aa', 'node_step': '2/3', 'output_data_type': 'str', 'output_data_length': 422}
+2026-03-21 16:26:35,537 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '4c8e9ad8-6955-42cb-99be-5370dcd9932c', 'step': 'node_processing_start', 'node_name': 'aaaa', 'node_type': 'FORMATTER', 'node_order': 2, 'node_step': '3/3', 'input_data_type': 'str', 'input_data_length': 422}
+2026-03-21 16:26:35,538 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '4c8e9ad8-6955-42cb-99be-5370dcd9932c', 'step': 'node_processing_complete', 'node_name': 'aaaa', 'node_step': '3/3', 'output_data_type': 'str', 'output_data_length': 422}
+2026-03-21 16:26:35,538 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '4c8e9ad8-6955-42cb-99be-5370dcd9932c', 'step': 'workflow_execution_complete', 'final_output_length': 422, 'nodes_processed': 3}
+2026-03-21 16:26:35,538 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '4c8e9ad8-6955-42cb-99be-5370dcd9932c', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 422}
+2026-03-21 16:26:35,540 - layerx.execution.service - INFO - [execution_service.py:104] - Execution 4c8e9ad8-6955-42cb-99be-5370dcd9932c completed successfully with 422 chars output
+2026-03-21 16:26:35,542 - layerx.execution.service - INFO - [execution_service.py:110] - Execution 4c8e9ad8-6955-42cb-99be-5370dcd9932c status updated from RUNNING to COMPLETED
+2026-03-21 18:10:36,800 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-21 18:10:36,803 - layerx.execution.router - INFO - [executions.py:39] - File saved successfully: uploads/6756a7d2-7947-4c9c-b76b-4e552ebd285f.pdf
+2026-03-21 18:10:36,803 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/6756a7d2-7947-4c9c-b76b-4e552ebd285f.pdf', 'has_file': True}
+2026-03-21 18:10:36,822 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: test2 with 3 nodes
+2026-03-21 18:10:36,835 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: 830b5243-7ab8-40f8-9ed8-014de5a704ee
+2026-03-21 18:10:36,835 - layerx.execution.router - INFO - [executions.py:52] - Starting background processing for execution: 830b5243-7ab8-40f8-9ed8-014de5a704ee
+2026-03-21 18:10:36,836 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '830b5243-7ab8-40f8-9ed8-014de5a704ee', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-21 18:10:36,838 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '830b5243-7ab8-40f8-9ed8-014de5a704ee', 'step': 'execution_retrieved', 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/6756a7d2-7947-4c9c-b76b-4e552ebd285f.pdf', 'status': 'PENDING'}
+2026-03-21 18:10:36,838 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '830b5243-7ab8-40f8-9ed8-014de5a704ee', 'step': 'status_update', 'new_status': 'RUNNING', 'has_output_data': False, 'has_error': False, 'output_data_length': 0}
+2026-03-21 18:10:36,839 - layerx.execution.service - INFO - [execution_service.py:101] - Execution 830b5243-7ab8-40f8-9ed8-014de5a704ee started running
+2026-03-21 18:10:36,844 - layerx.execution.service - INFO - [execution_service.py:110] - Execution 830b5243-7ab8-40f8-9ed8-014de5a704ee status updated from PENDING to RUNNING
+2026-03-21 18:10:36,847 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '830b5243-7ab8-40f8-9ed8-014de5a704ee', 'step': 'workflow_loaded', 'workflow_name': 'test2', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI', 'FORMATTER']}
+2026-03-21 18:10:36,847 - layerx.execution.processor - INFO - [executions.py:150] - Starting node processing for execution 830b5243-7ab8-40f8-9ed8-014de5a704ee with input: uploads/6756a7d2-7947-4c9c-b76b-4e552ebd285f.pdf
+2026-03-21 18:10:36,847 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '830b5243-7ab8-40f8-9ed8-014de5a704ee', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-21 18:10:37,366 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '830b5243-7ab8-40f8-9ed8-014de5a704ee', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 12887}
+2026-03-21 18:10:37,366 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '830b5243-7ab8-40f8-9ed8-014de5a704ee', 'step': 'node_processing_start', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/3', 'input_data_type': 'str', 'input_data_length': 12887}
+2026-03-21 18:10:40,764 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '830b5243-7ab8-40f8-9ed8-014de5a704ee', 'step': 'node_processing_complete', 'node_name': 'aa', 'node_step': '2/3', 'output_data_type': 'str', 'output_data_length': 731}
+2026-03-21 18:10:40,764 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '830b5243-7ab8-40f8-9ed8-014de5a704ee', 'step': 'node_processing_start', 'node_name': 'aaaa', 'node_type': 'FORMATTER', 'node_order': 2, 'node_step': '3/3', 'input_data_type': 'str', 'input_data_length': 731}
+2026-03-21 18:10:40,764 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '830b5243-7ab8-40f8-9ed8-014de5a704ee', 'step': 'node_processing_complete', 'node_name': 'aaaa', 'node_step': '3/3', 'output_data_type': 'str', 'output_data_length': 731}
+2026-03-21 18:10:40,764 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '830b5243-7ab8-40f8-9ed8-014de5a704ee', 'step': 'workflow_execution_complete', 'final_output_length': 731, 'nodes_processed': 3}
+2026-03-21 18:10:40,764 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '830b5243-7ab8-40f8-9ed8-014de5a704ee', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 731}
+2026-03-21 18:10:40,766 - layerx.execution.service - INFO - [execution_service.py:104] - Execution 830b5243-7ab8-40f8-9ed8-014de5a704ee completed successfully with 731 chars output
+2026-03-21 18:10:40,768 - layerx.execution.service - INFO - [execution_service.py:110] - Execution 830b5243-7ab8-40f8-9ed8-014de5a704ee status updated from RUNNING to COMPLETED
+2026-03-21 18:13:51,670 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'file_name': '入社書類の電子署名のお願い【松葉_悠悟様】 (1).pdf', 'file_content_type': 'application/pdf', 'file_size': 848846}
+2026-03-21 18:13:51,673 - layerx.execution.router - INFO - [executions.py:39] - File saved successfully: uploads/1bb6ff5f-fb88-4955-bbf6-a3b1ba7f88e5.pdf
+2026-03-21 18:13:51,673 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/1bb6ff5f-fb88-4955-bbf6-a3b1ba7f88e5.pdf', 'has_file': True}
+2026-03-21 18:13:51,680 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: test2 with 3 nodes
+2026-03-21 18:13:51,694 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: f626e72a-a29e-4151-ab3c-a1a2f15e991a
+2026-03-21 18:13:51,694 - layerx.execution.router - INFO - [executions.py:52] - Starting background processing for execution: f626e72a-a29e-4151-ab3c-a1a2f15e991a
+2026-03-21 18:13:51,695 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f626e72a-a29e-4151-ab3c-a1a2f15e991a', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-21 18:13:51,696 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f626e72a-a29e-4151-ab3c-a1a2f15e991a', 'step': 'execution_retrieved', 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/1bb6ff5f-fb88-4955-bbf6-a3b1ba7f88e5.pdf', 'status': 'PENDING'}
+2026-03-21 18:13:51,696 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f626e72a-a29e-4151-ab3c-a1a2f15e991a', 'step': 'status_update', 'new_status': 'RUNNING', 'has_output_data': False, 'has_error': False, 'output_data_length': 0}
+2026-03-21 18:13:51,697 - layerx.execution.service - INFO - [execution_service.py:101] - Execution f626e72a-a29e-4151-ab3c-a1a2f15e991a started running
+2026-03-21 18:13:51,711 - layerx.execution.service - INFO - [execution_service.py:110] - Execution f626e72a-a29e-4151-ab3c-a1a2f15e991a status updated from PENDING to RUNNING
+2026-03-21 18:13:51,714 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f626e72a-a29e-4151-ab3c-a1a2f15e991a', 'step': 'workflow_loaded', 'workflow_name': 'test2', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI', 'FORMATTER']}
+2026-03-21 18:13:51,714 - layerx.execution.processor - INFO - [executions.py:150] - Starting node processing for execution f626e72a-a29e-4151-ab3c-a1a2f15e991a with input: uploads/1bb6ff5f-fb88-4955-bbf6-a3b1ba7f88e5.pdf
+2026-03-21 18:13:51,714 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f626e72a-a29e-4151-ab3c-a1a2f15e991a', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-21 18:13:52,370 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f626e72a-a29e-4151-ab3c-a1a2f15e991a', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 3383}
+2026-03-21 18:13:52,371 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f626e72a-a29e-4151-ab3c-a1a2f15e991a', 'step': 'node_processing_start', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/3', 'input_data_type': 'str', 'input_data_length': 3383}
+2026-03-21 18:13:54,539 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f626e72a-a29e-4151-ab3c-a1a2f15e991a', 'step': 'node_processing_complete', 'node_name': 'aa', 'node_step': '2/3', 'output_data_type': 'str', 'output_data_length': 796}
+2026-03-21 18:13:54,540 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f626e72a-a29e-4151-ab3c-a1a2f15e991a', 'step': 'node_processing_start', 'node_name': 'aaaa', 'node_type': 'FORMATTER', 'node_order': 2, 'node_step': '3/3', 'input_data_type': 'str', 'input_data_length': 796}
+2026-03-21 18:13:54,540 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f626e72a-a29e-4151-ab3c-a1a2f15e991a', 'step': 'node_processing_complete', 'node_name': 'aaaa', 'node_step': '3/3', 'output_data_type': 'str', 'output_data_length': 796}
+2026-03-21 18:13:54,540 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f626e72a-a29e-4151-ab3c-a1a2f15e991a', 'step': 'workflow_execution_complete', 'final_output_length': 796, 'nodes_processed': 3}
+2026-03-21 18:13:54,540 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f626e72a-a29e-4151-ab3c-a1a2f15e991a', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 796}
+2026-03-21 18:13:54,542 - layerx.execution.service - INFO - [execution_service.py:104] - Execution f626e72a-a29e-4151-ab3c-a1a2f15e991a completed successfully with 796 chars output
+2026-03-21 18:13:54,546 - layerx.execution.service - INFO - [execution_service.py:110] - Execution f626e72a-a29e-4151-ab3c-a1a2f15e991a status updated from RUNNING to COMPLETED
+2026-03-21 18:18:15,036 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'file_name': 'CTWD Assignment 1.pdf', 'file_content_type': 'application/pdf', 'file_size': 43841}
+2026-03-21 18:18:15,040 - layerx.execution.router - INFO - [executions.py:39] - File saved successfully: uploads/c34f2bf9-9557-47c6-8b24-f27db88953e6.pdf
+2026-03-21 18:18:15,040 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/c34f2bf9-9557-47c6-8b24-f27db88953e6.pdf', 'has_file': True}
+2026-03-21 18:18:15,058 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: test2 with 3 nodes
+2026-03-21 18:18:15,067 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: 154f3a00-8fe5-4a60-bede-12fb39157d92
+2026-03-21 18:18:15,067 - layerx.execution.router - INFO - [executions.py:52] - Starting background processing for execution: 154f3a00-8fe5-4a60-bede-12fb39157d92
+2026-03-21 18:18:15,068 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '154f3a00-8fe5-4a60-bede-12fb39157d92', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-21 18:18:15,069 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '154f3a00-8fe5-4a60-bede-12fb39157d92', 'step': 'execution_retrieved', 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/c34f2bf9-9557-47c6-8b24-f27db88953e6.pdf', 'status': 'PENDING'}
+2026-03-21 18:18:15,070 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '154f3a00-8fe5-4a60-bede-12fb39157d92', 'step': 'status_update', 'new_status': 'RUNNING', 'has_output_data': False, 'has_error': False, 'output_data_length': 0}
+2026-03-21 18:18:15,070 - layerx.execution.service - INFO - [execution_service.py:101] - Execution 154f3a00-8fe5-4a60-bede-12fb39157d92 started running
+2026-03-21 18:18:15,079 - layerx.execution.service - INFO - [execution_service.py:110] - Execution 154f3a00-8fe5-4a60-bede-12fb39157d92 status updated from PENDING to RUNNING
+2026-03-21 18:18:15,084 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '154f3a00-8fe5-4a60-bede-12fb39157d92', 'step': 'workflow_loaded', 'workflow_name': 'test2', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI', 'FORMATTER']}
+2026-03-21 18:18:15,084 - layerx.execution.processor - INFO - [executions.py:150] - Starting node processing for execution 154f3a00-8fe5-4a60-bede-12fb39157d92 with input: uploads/c34f2bf9-9557-47c6-8b24-f27db88953e6.pdf
+2026-03-21 18:18:15,084 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '154f3a00-8fe5-4a60-bede-12fb39157d92', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-21 18:18:15,138 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '154f3a00-8fe5-4a60-bede-12fb39157d92', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 1529}
+2026-03-21 18:18:15,138 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '154f3a00-8fe5-4a60-bede-12fb39157d92', 'step': 'node_processing_start', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/3', 'input_data_type': 'str', 'input_data_length': 1529}
+2026-03-21 18:18:17,979 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '154f3a00-8fe5-4a60-bede-12fb39157d92', 'step': 'node_processing_complete', 'node_name': 'aa', 'node_step': '2/3', 'output_data_type': 'str', 'output_data_length': 663}
+2026-03-21 18:18:17,980 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '154f3a00-8fe5-4a60-bede-12fb39157d92', 'step': 'node_processing_start', 'node_name': 'aaaa', 'node_type': 'FORMATTER', 'node_order': 2, 'node_step': '3/3', 'input_data_type': 'str', 'input_data_length': 663}
+2026-03-21 18:18:17,980 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '154f3a00-8fe5-4a60-bede-12fb39157d92', 'step': 'node_processing_complete', 'node_name': 'aaaa', 'node_step': '3/3', 'output_data_type': 'str', 'output_data_length': 663}
+2026-03-21 18:18:17,980 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '154f3a00-8fe5-4a60-bede-12fb39157d92', 'step': 'workflow_execution_complete', 'final_output_length': 663, 'nodes_processed': 3}
+2026-03-21 18:18:17,980 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '154f3a00-8fe5-4a60-bede-12fb39157d92', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 663}
+2026-03-21 18:18:17,982 - layerx.execution.service - INFO - [execution_service.py:104] - Execution 154f3a00-8fe5-4a60-bede-12fb39157d92 completed successfully with 663 chars output
+2026-03-21 18:18:17,985 - layerx.execution.service - INFO - [execution_service.py:110] - Execution 154f3a00-8fe5-4a60-bede-12fb39157d92 status updated from RUNNING to COMPLETED
+2026-03-21 18:18:55,027 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'file_name': 'Week 3 Tutorial - Graphics.pdf', 'file_content_type': 'application/pdf', 'file_size': 1200655}
+2026-03-21 18:18:55,029 - layerx.execution.router - INFO - [executions.py:39] - File saved successfully: uploads/a60763e3-df63-44ac-8220-f86cc6420c7d.pdf
+2026-03-21 18:18:55,029 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/a60763e3-df63-44ac-8220-f86cc6420c7d.pdf', 'has_file': True}
+2026-03-21 18:18:55,035 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: test2 with 3 nodes
+2026-03-21 18:18:55,076 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: f0a50289-fb9e-4f13-bf3c-5971cbb43024
+2026-03-21 18:18:55,076 - layerx.execution.router - INFO - [executions.py:52] - Starting background processing for execution: f0a50289-fb9e-4f13-bf3c-5971cbb43024
+2026-03-21 18:18:55,076 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f0a50289-fb9e-4f13-bf3c-5971cbb43024', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-21 18:18:55,077 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f0a50289-fb9e-4f13-bf3c-5971cbb43024', 'step': 'execution_retrieved', 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/a60763e3-df63-44ac-8220-f86cc6420c7d.pdf', 'status': 'PENDING'}
+2026-03-21 18:18:55,077 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f0a50289-fb9e-4f13-bf3c-5971cbb43024', 'step': 'status_update', 'new_status': 'RUNNING', 'has_output_data': False, 'has_error': False, 'output_data_length': 0}
+2026-03-21 18:18:55,078 - layerx.execution.service - INFO - [execution_service.py:101] - Execution f0a50289-fb9e-4f13-bf3c-5971cbb43024 started running
+2026-03-21 18:18:55,080 - layerx.execution.service - INFO - [execution_service.py:110] - Execution f0a50289-fb9e-4f13-bf3c-5971cbb43024 status updated from PENDING to RUNNING
+2026-03-21 18:18:55,082 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f0a50289-fb9e-4f13-bf3c-5971cbb43024', 'step': 'workflow_loaded', 'workflow_name': 'test2', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI', 'FORMATTER']}
+2026-03-21 18:18:55,082 - layerx.execution.processor - INFO - [executions.py:150] - Starting node processing for execution f0a50289-fb9e-4f13-bf3c-5971cbb43024 with input: uploads/a60763e3-df63-44ac-8220-f86cc6420c7d.pdf
+2026-03-21 18:18:55,082 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f0a50289-fb9e-4f13-bf3c-5971cbb43024', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-21 18:18:55,149 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f0a50289-fb9e-4f13-bf3c-5971cbb43024', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 3737}
+2026-03-21 18:18:55,149 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f0a50289-fb9e-4f13-bf3c-5971cbb43024', 'step': 'node_processing_start', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/3', 'input_data_type': 'str', 'input_data_length': 3737}
+2026-03-21 18:18:57,607 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f0a50289-fb9e-4f13-bf3c-5971cbb43024', 'step': 'node_processing_complete', 'node_name': 'aa', 'node_step': '2/3', 'output_data_type': 'str', 'output_data_length': 591}
+2026-03-21 18:18:57,607 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f0a50289-fb9e-4f13-bf3c-5971cbb43024', 'step': 'node_processing_start', 'node_name': 'aaaa', 'node_type': 'FORMATTER', 'node_order': 2, 'node_step': '3/3', 'input_data_type': 'str', 'input_data_length': 591}
+2026-03-21 18:18:57,608 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f0a50289-fb9e-4f13-bf3c-5971cbb43024', 'step': 'node_processing_complete', 'node_name': 'aaaa', 'node_step': '3/3', 'output_data_type': 'str', 'output_data_length': 591}
+2026-03-21 18:18:57,608 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f0a50289-fb9e-4f13-bf3c-5971cbb43024', 'step': 'workflow_execution_complete', 'final_output_length': 591, 'nodes_processed': 3}
+2026-03-21 18:18:57,608 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'f0a50289-fb9e-4f13-bf3c-5971cbb43024', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 591}
+2026-03-21 18:18:57,610 - layerx.execution.service - INFO - [execution_service.py:104] - Execution f0a50289-fb9e-4f13-bf3c-5971cbb43024 completed successfully with 591 chars output
+2026-03-21 18:18:57,612 - layerx.execution.service - INFO - [execution_service.py:110] - Execution f0a50289-fb9e-4f13-bf3c-5971cbb43024 status updated from RUNNING to COMPLETED
+2026-03-21 18:21:26,631 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'file_name': 'CTWD Assignment 1.pdf', 'file_content_type': 'application/pdf', 'file_size': 43841}
+2026-03-21 18:21:26,633 - layerx.execution.router - INFO - [executions.py:39] - File saved successfully: uploads/e3423e66-7f94-4705-a5aa-fd5dcc9b1198.pdf
+2026-03-21 18:21:26,633 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/e3423e66-7f94-4705-a5aa-fd5dcc9b1198.pdf', 'has_file': True}
+2026-03-21 18:21:26,658 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: test2 with 3 nodes
+2026-03-21 18:21:26,665 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: b54cdbb4-29a2-484b-aae0-162863f3598d
+2026-03-21 18:21:26,665 - layerx.execution.router - INFO - [executions.py:52] - Starting background processing for execution: b54cdbb4-29a2-484b-aae0-162863f3598d
+2026-03-21 18:21:26,666 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'b54cdbb4-29a2-484b-aae0-162863f3598d', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-21 18:21:26,667 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'b54cdbb4-29a2-484b-aae0-162863f3598d', 'step': 'execution_retrieved', 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/e3423e66-7f94-4705-a5aa-fd5dcc9b1198.pdf', 'status': 'PENDING'}
+2026-03-21 18:21:26,667 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'b54cdbb4-29a2-484b-aae0-162863f3598d', 'step': 'status_update', 'new_status': 'RUNNING', 'has_output_data': False, 'has_error': False, 'output_data_length': 0}
+2026-03-21 18:21:26,668 - layerx.execution.service - INFO - [execution_service.py:101] - Execution b54cdbb4-29a2-484b-aae0-162863f3598d started running
+2026-03-21 18:21:26,671 - layerx.execution.service - INFO - [execution_service.py:110] - Execution b54cdbb4-29a2-484b-aae0-162863f3598d status updated from PENDING to RUNNING
+2026-03-21 18:21:26,673 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'b54cdbb4-29a2-484b-aae0-162863f3598d', 'step': 'workflow_loaded', 'workflow_name': 'test2', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI', 'FORMATTER']}
+2026-03-21 18:21:26,673 - layerx.execution.processor - INFO - [executions.py:150] - Starting node processing for execution b54cdbb4-29a2-484b-aae0-162863f3598d with input: uploads/e3423e66-7f94-4705-a5aa-fd5dcc9b1198.pdf
+2026-03-21 18:21:26,673 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'b54cdbb4-29a2-484b-aae0-162863f3598d', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-21 18:21:26,729 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'b54cdbb4-29a2-484b-aae0-162863f3598d', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 1529}
+2026-03-21 18:21:26,729 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'b54cdbb4-29a2-484b-aae0-162863f3598d', 'step': 'node_processing_start', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/3', 'input_data_type': 'str', 'input_data_length': 1529}
+2026-03-21 18:21:29,363 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'b54cdbb4-29a2-484b-aae0-162863f3598d', 'step': 'node_processing_complete', 'node_name': 'aa', 'node_step': '2/3', 'output_data_type': 'str', 'output_data_length': 611}
+2026-03-21 18:21:29,363 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'b54cdbb4-29a2-484b-aae0-162863f3598d', 'step': 'node_processing_start', 'node_name': 'aaaa', 'node_type': 'FORMATTER', 'node_order': 2, 'node_step': '3/3', 'input_data_type': 'str', 'input_data_length': 611}
+2026-03-21 18:21:29,363 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'b54cdbb4-29a2-484b-aae0-162863f3598d', 'step': 'node_processing_complete', 'node_name': 'aaaa', 'node_step': '3/3', 'output_data_type': 'str', 'output_data_length': 611}
+2026-03-21 18:21:29,364 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'b54cdbb4-29a2-484b-aae0-162863f3598d', 'step': 'workflow_execution_complete', 'final_output_length': 611, 'nodes_processed': 3}
+2026-03-21 18:21:29,364 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'b54cdbb4-29a2-484b-aae0-162863f3598d', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 611}
+2026-03-21 18:21:29,365 - layerx.execution.service - INFO - [execution_service.py:104] - Execution b54cdbb4-29a2-484b-aae0-162863f3598d completed successfully with 611 chars output
+2026-03-21 18:21:29,367 - layerx.execution.service - INFO - [execution_service.py:110] - Execution b54cdbb4-29a2-484b-aae0-162863f3598d status updated from RUNNING to COMPLETED
+2026-03-21 18:22:39,757 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'file_name': 'prelab-1.pdf', 'file_content_type': 'application/pdf', 'file_size': 129094}
+2026-03-21 18:22:39,759 - layerx.execution.router - INFO - [executions.py:39] - File saved successfully: uploads/0572574a-af77-47c8-ae93-0130092452e7.pdf
+2026-03-21 18:22:39,759 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/0572574a-af77-47c8-ae93-0130092452e7.pdf', 'has_file': True}
+2026-03-21 18:22:39,766 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: test2 with 3 nodes
+2026-03-21 18:22:39,781 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: c4f30215-0f80-4867-bfe9-25cb609d7ebc
+2026-03-21 18:22:39,781 - layerx.execution.router - INFO - [executions.py:52] - Starting background processing for execution: c4f30215-0f80-4867-bfe9-25cb609d7ebc
+2026-03-21 18:22:39,782 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c4f30215-0f80-4867-bfe9-25cb609d7ebc', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-21 18:22:39,783 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c4f30215-0f80-4867-bfe9-25cb609d7ebc', 'step': 'execution_retrieved', 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/0572574a-af77-47c8-ae93-0130092452e7.pdf', 'status': 'PENDING'}
+2026-03-21 18:22:39,783 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c4f30215-0f80-4867-bfe9-25cb609d7ebc', 'step': 'status_update', 'new_status': 'RUNNING', 'has_output_data': False, 'has_error': False, 'output_data_length': 0}
+2026-03-21 18:22:39,784 - layerx.execution.service - INFO - [execution_service.py:101] - Execution c4f30215-0f80-4867-bfe9-25cb609d7ebc started running
+2026-03-21 18:22:39,790 - layerx.execution.service - INFO - [execution_service.py:110] - Execution c4f30215-0f80-4867-bfe9-25cb609d7ebc status updated from PENDING to RUNNING
+2026-03-21 18:22:39,792 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c4f30215-0f80-4867-bfe9-25cb609d7ebc', 'step': 'workflow_loaded', 'workflow_name': 'test2', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI', 'FORMATTER']}
+2026-03-21 18:22:39,793 - layerx.execution.processor - INFO - [executions.py:150] - Starting node processing for execution c4f30215-0f80-4867-bfe9-25cb609d7ebc with input: uploads/0572574a-af77-47c8-ae93-0130092452e7.pdf
+2026-03-21 18:22:39,793 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c4f30215-0f80-4867-bfe9-25cb609d7ebc', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-21 18:22:39,850 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c4f30215-0f80-4867-bfe9-25cb609d7ebc', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 4767}
+2026-03-21 18:22:39,850 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c4f30215-0f80-4867-bfe9-25cb609d7ebc', 'step': 'node_processing_start', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/3', 'input_data_type': 'str', 'input_data_length': 4767}
+2026-03-21 18:22:41,828 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c4f30215-0f80-4867-bfe9-25cb609d7ebc', 'step': 'node_processing_complete', 'node_name': 'aa', 'node_step': '2/3', 'output_data_type': 'str', 'output_data_length': 892}
+2026-03-21 18:22:41,828 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c4f30215-0f80-4867-bfe9-25cb609d7ebc', 'step': 'node_processing_start', 'node_name': 'aaaa', 'node_type': 'FORMATTER', 'node_order': 2, 'node_step': '3/3', 'input_data_type': 'str', 'input_data_length': 892}
+2026-03-21 18:22:41,829 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c4f30215-0f80-4867-bfe9-25cb609d7ebc', 'step': 'node_processing_complete', 'node_name': 'aaaa', 'node_step': '3/3', 'output_data_type': 'str', 'output_data_length': 892}
+2026-03-21 18:22:41,829 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c4f30215-0f80-4867-bfe9-25cb609d7ebc', 'step': 'workflow_execution_complete', 'final_output_length': 892, 'nodes_processed': 3}
+2026-03-21 18:22:41,829 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c4f30215-0f80-4867-bfe9-25cb609d7ebc', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 892}
+2026-03-21 18:22:41,830 - layerx.execution.service - INFO - [execution_service.py:104] - Execution c4f30215-0f80-4867-bfe9-25cb609d7ebc completed successfully with 892 chars output
+2026-03-21 18:22:41,838 - layerx.execution.service - INFO - [execution_service.py:110] - Execution c4f30215-0f80-4867-bfe9-25cb609d7ebc status updated from RUNNING to COMPLETED
+2026-03-21 18:24:02,614 - layerx.main - INFO - [main.py:59] - Starting LayerX Workflow Engine...
+2026-03-21 18:24:02,672 - layerx.main - INFO - [main.py:61] - Database tables initialized successfully
+2026-03-21 18:24:16,716 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'file_name': 'CTWD Assignment 1.pdf', 'file_content_type': 'application/pdf', 'file_size': 43841}
+2026-03-21 18:24:16,717 - layerx.execution.router - INFO - [executions.py:42] - File saved successfully: uploads/1bff74a7-ceaf-4cff-8ba4-c41ca0361f48.pdf
+2026-03-21 18:24:16,718 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/1bff74a7-ceaf-4cff-8ba4-c41ca0361f48.pdf', 'has_file': True}
+2026-03-21 18:24:16,726 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: test2 with 3 nodes
+2026-03-21 18:24:16,747 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: e61ada67-5f2e-4664-8577-6680e924c8c0
+2026-03-21 18:24:16,747 - layerx.execution.router - INFO - [executions.py:55] - Starting background processing for execution: e61ada67-5f2e-4664-8577-6680e924c8c0
+2026-03-21 18:24:16,748 - layerx.execution.router - INFO - [executions.py:59] - Execution e61ada67-5f2e-4664-8577-6680e924c8c0 committed to database
+2026-03-21 18:24:16,847 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e61ada67-5f2e-4664-8577-6680e924c8c0', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-21 18:24:16,855 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e61ada67-5f2e-4664-8577-6680e924c8c0', 'step': 'execution_retrieved', 'workflow_id': 'dfa252c7-91d2-455f-88de-9aa4945232cb', 'input_file_path': 'uploads/1bff74a7-ceaf-4cff-8ba4-c41ca0361f48.pdf', 'status': 'RUNNING'}
+2026-03-21 18:24:16,857 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e61ada67-5f2e-4664-8577-6680e924c8c0', 'step': 'workflow_loaded', 'workflow_name': 'test2', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI', 'FORMATTER']}
+2026-03-21 18:24:16,857 - layerx.execution.processor - INFO - [executions.py:153] - Starting node processing for execution e61ada67-5f2e-4664-8577-6680e924c8c0 with input: uploads/1bff74a7-ceaf-4cff-8ba4-c41ca0361f48.pdf
+2026-03-21 18:24:16,857 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e61ada67-5f2e-4664-8577-6680e924c8c0', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-21 18:24:16,909 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e61ada67-5f2e-4664-8577-6680e924c8c0', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 1529}
+2026-03-21 18:24:16,909 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e61ada67-5f2e-4664-8577-6680e924c8c0', 'step': 'node_processing_start', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/3', 'input_data_type': 'str', 'input_data_length': 1529}
+2026-03-21 18:24:19,857 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e61ada67-5f2e-4664-8577-6680e924c8c0', 'step': 'node_processing_complete', 'node_name': 'aa', 'node_step': '2/3', 'output_data_type': 'str', 'output_data_length': 730}
+2026-03-21 18:24:19,858 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e61ada67-5f2e-4664-8577-6680e924c8c0', 'step': 'node_processing_start', 'node_name': 'aaaa', 'node_type': 'FORMATTER', 'node_order': 2, 'node_step': '3/3', 'input_data_type': 'str', 'input_data_length': 730}
+2026-03-21 18:24:19,858 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e61ada67-5f2e-4664-8577-6680e924c8c0', 'step': 'node_processing_complete', 'node_name': 'aaaa', 'node_step': '3/3', 'output_data_type': 'str', 'output_data_length': 730}
+2026-03-21 18:24:19,858 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e61ada67-5f2e-4664-8577-6680e924c8c0', 'step': 'workflow_execution_complete', 'final_output_length': 730, 'nodes_processed': 3}
+2026-03-21 18:24:19,858 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e61ada67-5f2e-4664-8577-6680e924c8c0', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 730}
+2026-03-21 18:24:19,860 - layerx.execution.service - INFO - [execution_service.py:104] - Execution e61ada67-5f2e-4664-8577-6680e924c8c0 completed successfully with 730 chars output
+2026-03-21 18:24:19,866 - layerx.execution.service - INFO - [execution_service.py:110] - Execution e61ada67-5f2e-4664-8577-6680e924c8c0 status updated from RUNNING to COMPLETED
+2026-03-21 18:53:58,053 - layerx.workflow.router - INFO - [workflows.py:26] - Workflow 705d5786-3ebf-406b-9cbb-b712cb831ad0 committed to database
+2026-03-21 18:54:17,152 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '705d5786-3ebf-406b-9cbb-b712cb831ad0', 'node_name': 'aa', 'node_type': 'FORMATTER', 'order': 0}
+2026-03-21 18:54:31,277 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '705d5786-3ebf-406b-9cbb-b712cb831ad0', 'node_name': 'aaa', 'node_type': 'GENERATIVE_AI', 'order': 1}
+2026-03-21 18:54:39,409 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '705d5786-3ebf-406b-9cbb-b712cb831ad0', 'file_name': 'Week 3 Tutorial - Graphics.pdf', 'file_content_type': 'application/pdf', 'file_size': 1200655}
+2026-03-21 18:54:39,412 - layerx.execution.router - INFO - [executions.py:42] - File saved successfully: uploads/5da05db2-8c5c-4277-a50a-4d3282e6742b.pdf
+2026-03-21 18:54:39,412 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '705d5786-3ebf-406b-9cbb-b712cb831ad0', 'input_file_path': 'uploads/5da05db2-8c5c-4277-a50a-4d3282e6742b.pdf', 'has_file': True}
+2026-03-21 18:54:39,432 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: test 3 fail case with 2 nodes
+2026-03-21 18:54:39,433 - layerx.execution.service - ERROR - [execution_service.py:48] - Workflow validation failed: ['First node must be able to handle PDF input. Found FORMATTER which expects text']
+2026-03-21 18:54:39,433 - layerx.execution.router - WARNING - [executions.py:48] - Execution creation failed, cleaning up file: uploads/5da05db2-8c5c-4277-a50a-4d3282e6742b.pdf
+2026-03-21 20:45:54,955 - layerx.workflow.router - INFO - [workflows.py:26] - Workflow 9167dd63-e17a-4b9b-859e-e7a6d64c8eb5 committed to database
+2026-03-21 20:46:00,954 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '9167dd63-e17a-4b9b-859e-e7a6d64c8eb5', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'order': 0}
+2026-03-21 20:46:20,747 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '9167dd63-e17a-4b9b-859e-e7a6d64c8eb5', 'node_name': 'aaa', 'node_type': 'FORMATTER', 'order': 1}
+2026-03-21 20:46:39,055 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '9167dd63-e17a-4b9b-859e-e7a6d64c8eb5', 'file_name': 'CTWD Assignment 1.pdf', 'file_content_type': 'application/pdf', 'file_size': 43841}
+2026-03-21 20:46:39,058 - layerx.execution.router - INFO - [executions.py:42] - File saved successfully: uploads/58e66969-75fe-4eba-8e18-b8dff48e2857.pdf
+2026-03-21 20:46:39,059 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '9167dd63-e17a-4b9b-859e-e7a6d64c8eb5', 'input_file_path': 'uploads/58e66969-75fe-4eba-8e18-b8dff48e2857.pdf', 'has_file': True}
+2026-03-21 20:46:39,107 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: test 4 with 2 nodes
+2026-03-21 20:46:39,126 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: 5acd98b0-a00e-4fa8-816b-3c3171dcf381
+2026-03-21 20:46:39,127 - layerx.execution.router - INFO - [executions.py:55] - Starting background processing for execution: 5acd98b0-a00e-4fa8-816b-3c3171dcf381
+2026-03-21 20:46:39,129 - layerx.execution.router - INFO - [executions.py:59] - Execution 5acd98b0-a00e-4fa8-816b-3c3171dcf381 committed to database
+2026-03-21 20:46:39,133 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '5acd98b0-a00e-4fa8-816b-3c3171dcf381', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-21 20:46:39,158 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '5acd98b0-a00e-4fa8-816b-3c3171dcf381', 'step': 'execution_retrieved', 'workflow_id': '9167dd63-e17a-4b9b-859e-e7a6d64c8eb5', 'input_file_path': 'uploads/58e66969-75fe-4eba-8e18-b8dff48e2857.pdf', 'status': 'RUNNING'}
+2026-03-21 20:46:39,172 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '5acd98b0-a00e-4fa8-816b-3c3171dcf381', 'step': 'workflow_loaded', 'workflow_name': 'test 4', 'node_count': 2, 'node_types': ['EXTRACT_TEXT', 'FORMATTER']}
+2026-03-21 20:46:39,172 - layerx.execution.processor - INFO - [executions.py:153] - Starting node processing for execution 5acd98b0-a00e-4fa8-816b-3c3171dcf381 with input: uploads/58e66969-75fe-4eba-8e18-b8dff48e2857.pdf
+2026-03-21 20:46:39,173 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '5acd98b0-a00e-4fa8-816b-3c3171dcf381', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/2', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-21 20:46:39,259 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '5acd98b0-a00e-4fa8-816b-3c3171dcf381', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '1/2', 'output_data_type': 'str', 'output_data_length': 1529}
+2026-03-21 20:46:39,260 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '5acd98b0-a00e-4fa8-816b-3c3171dcf381', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'FORMATTER', 'node_order': 1, 'node_step': '2/2', 'input_data_type': 'str', 'input_data_length': 1529}
+2026-03-21 20:46:39,260 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '5acd98b0-a00e-4fa8-816b-3c3171dcf381', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '2/2', 'output_data_type': 'str', 'output_data_length': 1529}
+2026-03-21 20:46:39,261 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '5acd98b0-a00e-4fa8-816b-3c3171dcf381', 'step': 'workflow_execution_complete', 'final_output_length': 1529, 'nodes_processed': 2}
+2026-03-21 20:46:39,261 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '5acd98b0-a00e-4fa8-816b-3c3171dcf381', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 1529}
+2026-03-21 20:46:39,264 - layerx.execution.service - INFO - [execution_service.py:104] - Execution 5acd98b0-a00e-4fa8-816b-3c3171dcf381 completed successfully with 1529 chars output
+2026-03-21 20:46:39,280 - layerx.execution.service - INFO - [execution_service.py:110] - Execution 5acd98b0-a00e-4fa8-816b-3c3171dcf381 status updated from RUNNING to COMPLETED
+2026-03-21 20:58:20,002 - layerx.workflow.router - INFO - [workflows.py:26] - Workflow 283c71cf-3519-422f-bde8-5f5a6973b358 committed to database
+2026-03-21 20:58:26,648 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '283c71cf-3519-422f-bde8-5f5a6973b358', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'order': 0}
+2026-03-21 20:58:39,215 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '283c71cf-3519-422f-bde8-5f5a6973b358', 'node_name': 'aaa', 'node_type': 'FORMATTER', 'order': 1}
+2026-03-21 20:58:46,886 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '283c71cf-3519-422f-bde8-5f5a6973b358', 'file_name': 'Yugo_Matsuba_Resume (2).pdf', 'file_content_type': 'application/pdf', 'file_size': 71813}
+2026-03-21 20:58:46,887 - layerx.execution.router - INFO - [executions.py:42] - File saved successfully: uploads/41ecf809-f59c-4128-a544-15e3328c6d3e.pdf
+2026-03-21 20:58:46,888 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '283c71cf-3519-422f-bde8-5f5a6973b358', 'input_file_path': 'uploads/41ecf809-f59c-4128-a544-15e3328c6d3e.pdf', 'has_file': True}
+2026-03-21 20:58:46,905 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: aaa with 2 nodes
+2026-03-21 20:58:46,909 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: dc7d357f-89a4-4729-b9d2-8a04de17b6c9
+2026-03-21 20:58:46,910 - layerx.execution.router - INFO - [executions.py:55] - Starting background processing for execution: dc7d357f-89a4-4729-b9d2-8a04de17b6c9
+2026-03-21 20:58:46,911 - layerx.execution.router - INFO - [executions.py:59] - Execution dc7d357f-89a4-4729-b9d2-8a04de17b6c9 committed to database
+2026-03-21 20:58:46,912 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'dc7d357f-89a4-4729-b9d2-8a04de17b6c9', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-21 20:58:46,920 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'dc7d357f-89a4-4729-b9d2-8a04de17b6c9', 'step': 'execution_retrieved', 'workflow_id': '283c71cf-3519-422f-bde8-5f5a6973b358', 'input_file_path': 'uploads/41ecf809-f59c-4128-a544-15e3328c6d3e.pdf', 'status': 'RUNNING'}
+2026-03-21 20:58:46,924 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'dc7d357f-89a4-4729-b9d2-8a04de17b6c9', 'step': 'workflow_loaded', 'workflow_name': 'aaa', 'node_count': 2, 'node_types': ['EXTRACT_TEXT', 'FORMATTER']}
+2026-03-21 20:58:46,924 - layerx.execution.processor - INFO - [executions.py:153] - Starting node processing for execution dc7d357f-89a4-4729-b9d2-8a04de17b6c9 with input: uploads/41ecf809-f59c-4128-a544-15e3328c6d3e.pdf
+2026-03-21 20:58:46,924 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'dc7d357f-89a4-4729-b9d2-8a04de17b6c9', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/2', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-21 20:58:47,170 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'dc7d357f-89a4-4729-b9d2-8a04de17b6c9', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '1/2', 'output_data_type': 'str', 'output_data_length': 3815}
+2026-03-21 20:58:47,170 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'dc7d357f-89a4-4729-b9d2-8a04de17b6c9', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'FORMATTER', 'node_order': 1, 'node_step': '2/2', 'input_data_type': 'str', 'input_data_length': 3815}
+2026-03-21 20:58:47,170 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'dc7d357f-89a4-4729-b9d2-8a04de17b6c9', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '2/2', 'output_data_type': 'str', 'output_data_length': 3815}
+2026-03-21 20:58:47,170 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'dc7d357f-89a4-4729-b9d2-8a04de17b6c9', 'step': 'workflow_execution_complete', 'final_output_length': 3815, 'nodes_processed': 2}
+2026-03-21 20:58:47,170 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'dc7d357f-89a4-4729-b9d2-8a04de17b6c9', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 3815}
+2026-03-21 20:58:47,172 - layerx.execution.service - INFO - [execution_service.py:104] - Execution dc7d357f-89a4-4729-b9d2-8a04de17b6c9 completed successfully with 3815 chars output
+2026-03-21 20:58:47,205 - layerx.execution.service - INFO - [execution_service.py:110] - Execution dc7d357f-89a4-4729-b9d2-8a04de17b6c9 status updated from RUNNING to COMPLETED
+2026-03-21 22:15:53,204 - layerx.workflow.router - INFO - [workflows.py:26] - Workflow 14717292-f499-4b8a-b279-d19a2760f712 committed to database
+2026-03-21 22:16:09,588 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '14717292-f499-4b8a-b279-d19a2760f712', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'order': 0}
+2026-03-21 22:16:17,985 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '14717292-f499-4b8a-b279-d19a2760f712', 'node_name': 'aaaa', 'node_type': 'EXTRACT_TEXT', 'order': 0}
+2026-03-21 22:16:18,015 - layerx.workflow.router - ERROR - [workflows.py:102] - Unexpected error while adding node for workflow_id=14717292-f499-4b8a-b279-d19a2760f712 node_type=EXTRACT_TEXT node_name=aaaa
+Traceback (most recent call last):
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 557, in _prepare_and_execute
+    self._rows = await prepared_stmt.fetch(*parameters)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/asyncpg/prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/asyncpg/prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/asyncpg/prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+  File "asyncpg/protocol/protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "uq_workflow_node_order"
+DETAIL:  Key (workflow_id, "order")=(14717292-f499-4b8a-b279-d19a2760f712, 0) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 591, in execute
+    self._adapt_connection.await_(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 569, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 520, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 808, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uq_workflow_node_order"
+DETAIL:  Key (workflow_id, "order")=(14717292-f499-4b8a-b279-d19a2760f712, 0) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/yugo/Desktop/LayerX/server/api/routers/workflows.py", line 81, in add_node
+    try:
+  File "/Users/yugo/Desktop/LayerX/server/services/workflow_service.py", line 49, in add_node
+    order=request.order if request.order is not None else len(workflow.nodes)
+  File "/Users/yugo/Desktop/LayerX/server/infra/db/repositories/sqlalchemy_workflow_repository.py", line 137, in add_node
+    await self.session.flush()
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/ext/asyncio/session.py", line 802, in flush
+    await greenlet_spawn(self.sync_session.flush, objects=objects)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 192, in greenlet_spawn
+    result = context.switch(value)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 4312, in flush
+    self._flush(objects)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 4448, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 4408, in _flush
+    flush_context.execute()
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/persistence.py", line 1226, in _emit_insert_statements
+    result = connection.execute(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 591, in execute
+    self._adapt_connection.await_(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 569, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 520, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 808, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uq_workflow_node_order"
+DETAIL:  Key (workflow_id, "order")=(14717292-f499-4b8a-b279-d19a2760f712, 0) already exists.
+[SQL: INSERT INTO nodes (id, workflow_id, node_type, name, configuration, "order") VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::JSON, $6::INTEGER) RETURNING nodes.created_at]
+[parameters: ('12e82141-20d1-4b37-bdb6-dfa4e5199443', '14717292-f499-4b8a-b279-d19a2760f712', 'EXTRACT_TEXT', 'aaaa', '{}', 0)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-03-21 22:17:12,252 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '14717292-f499-4b8a-b279-d19a2760f712', 'node_name': 'aaaaaaa', 'node_type': 'EXTRACT_TEXT', 'order': 0}
+2026-03-21 22:17:12,287 - layerx.workflow.router - ERROR - [workflows.py:102] - Unexpected error while adding node for workflow_id=14717292-f499-4b8a-b279-d19a2760f712 node_type=EXTRACT_TEXT node_name=aaaaaaa
+Traceback (most recent call last):
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 557, in _prepare_and_execute
+    self._rows = await prepared_stmt.fetch(*parameters)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/asyncpg/prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/asyncpg/prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/asyncpg/prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+  File "asyncpg/protocol/protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "uq_workflow_node_order"
+DETAIL:  Key (workflow_id, "order")=(14717292-f499-4b8a-b279-d19a2760f712, 0) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 591, in execute
+    self._adapt_connection.await_(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 569, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 520, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 808, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uq_workflow_node_order"
+DETAIL:  Key (workflow_id, "order")=(14717292-f499-4b8a-b279-d19a2760f712, 0) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/yugo/Desktop/LayerX/server/api/routers/workflows.py", line 81, in add_node
+    try:
+  File "/Users/yugo/Desktop/LayerX/server/services/workflow_service.py", line 49, in add_node
+    order=request.order if request.order is not None else len(workflow.nodes)
+  File "/Users/yugo/Desktop/LayerX/server/infra/db/repositories/sqlalchemy_workflow_repository.py", line 137, in add_node
+    await self.session.flush()
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/ext/asyncio/session.py", line 802, in flush
+    await greenlet_spawn(self.sync_session.flush, objects=objects)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 192, in greenlet_spawn
+    result = context.switch(value)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 4312, in flush
+    self._flush(objects)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 4448, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 4408, in _flush
+    flush_context.execute()
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/persistence.py", line 1226, in _emit_insert_statements
+    result = connection.execute(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 591, in execute
+    self._adapt_connection.await_(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 569, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 520, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 808, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uq_workflow_node_order"
+DETAIL:  Key (workflow_id, "order")=(14717292-f499-4b8a-b279-d19a2760f712, 0) already exists.
+[SQL: INSERT INTO nodes (id, workflow_id, node_type, name, configuration, "order") VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::JSON, $6::INTEGER) RETURNING nodes.created_at]
+[parameters: ('e478f3c9-9bfb-4a6c-94cd-4dcba4b1ecfe', '14717292-f499-4b8a-b279-d19a2760f712', 'EXTRACT_TEXT', 'aaaaaaa', '{}', 0)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-03-21 22:18:06,637 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '14717292-f499-4b8a-b279-d19a2760f712', 'node_name': 'aaaaaaa', 'node_type': 'EXTRACT_TEXT', 'order': 0}
+2026-03-21 22:18:06,676 - layerx.workflow.router - ERROR - [workflows.py:102] - Unexpected error while adding node for workflow_id=14717292-f499-4b8a-b279-d19a2760f712 node_type=EXTRACT_TEXT node_name=aaaaaaa
+Traceback (most recent call last):
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 557, in _prepare_and_execute
+    self._rows = await prepared_stmt.fetch(*parameters)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/asyncpg/prepared_stmt.py", line 176, in fetch
+    data = await self.__bind_execute(args, 0, timeout)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/asyncpg/prepared_stmt.py", line 241, in __bind_execute
+    data, status, _ = await self.__do_execute(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/asyncpg/prepared_stmt.py", line 230, in __do_execute
+    return await executor(protocol)
+  File "asyncpg/protocol/protocol.pyx", line 207, in bind_execute
+asyncpg.exceptions.UniqueViolationError: duplicate key value violates unique constraint "uq_workflow_node_order"
+DETAIL:  Key (workflow_id, "order")=(14717292-f499-4b8a-b279-d19a2760f712, 0) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 591, in execute
+    self._adapt_connection.await_(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 569, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 520, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 808, in _handle_exception
+    raise translated_error from error
+sqlalchemy.dialects.postgresql.asyncpg.AsyncAdapt_asyncpg_dbapi.IntegrityError: <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uq_workflow_node_order"
+DETAIL:  Key (workflow_id, "order")=(14717292-f499-4b8a-b279-d19a2760f712, 0) already exists.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/yugo/Desktop/LayerX/server/api/routers/workflows.py", line 81, in add_node
+    try:
+  File "/Users/yugo/Desktop/LayerX/server/services/workflow_service.py", line 49, in add_node
+    order=request.order if request.order is not None else len(workflow.nodes)
+  File "/Users/yugo/Desktop/LayerX/server/infra/db/repositories/sqlalchemy_workflow_repository.py", line 137, in add_node
+    await self.session.flush()
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/ext/asyncio/session.py", line 802, in flush
+    await greenlet_spawn(self.sync_session.flush, objects=objects)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 192, in greenlet_spawn
+    result = context.switch(value)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 4312, in flush
+    self._flush(objects)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 4448, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/session.py", line 4408, in _flush
+    flush_context.execute()
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/orm/persistence.py", line 1226, in _emit_insert_statements
+    result = connection.execute(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1416, in execute
+    return meth(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/sql/elements.py", line 516, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1639, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1848, in _execute_context
+    return self._exec_single_context(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1988, in _exec_single_context
+    self._handle_dbapi_exception(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 2343, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/base.py", line 1969, in _exec_single_context
+    self.dialect.do_execute(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/engine/default.py", line 922, in do_execute
+    cursor.execute(statement, parameters)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 591, in execute
+    self._adapt_connection.await_(
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 125, in await_only
+    return current.driver.switch(awaitable)  # type: ignore[no-any-return]
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/util/_concurrency_py3k.py", line 185, in greenlet_spawn
+    value = await result
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 569, in _prepare_and_execute
+    self._handle_exception(error)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 520, in _handle_exception
+    self._adapt_connection._handle_exception(error)
+  File "/Users/yugo/Library/Python/3.9/lib/python/site-packages/sqlalchemy/dialects/postgresql/asyncpg.py", line 808, in _handle_exception
+    raise translated_error from error
+sqlalchemy.exc.IntegrityError: (sqlalchemy.dialects.postgresql.asyncpg.IntegrityError) <class 'asyncpg.exceptions.UniqueViolationError'>: duplicate key value violates unique constraint "uq_workflow_node_order"
+DETAIL:  Key (workflow_id, "order")=(14717292-f499-4b8a-b279-d19a2760f712, 0) already exists.
+[SQL: INSERT INTO nodes (id, workflow_id, node_type, name, configuration, "order") VALUES ($1::VARCHAR, $2::VARCHAR, $3::VARCHAR, $4::VARCHAR, $5::JSON, $6::INTEGER) RETURNING nodes.created_at]
+[parameters: ('bd9c86c4-4217-4fb7-96e4-3d23a82f71fe', '14717292-f499-4b8a-b279-d19a2760f712', 'EXTRACT_TEXT', 'aaaaaaa', '{}', 0)]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+2026-03-21 22:18:41,784 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '14717292-f499-4b8a-b279-d19a2760f712', 'node_name': 'ああ', 'node_type': 'GENERATIVE_AI', 'order': 1}
+2026-03-21 22:18:52,683 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '14717292-f499-4b8a-b279-d19a2760f712', 'node_name': 'aaa', 'node_type': 'FORMATTER', 'order': 2}
+2026-03-21 22:18:59,851 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '14717292-f499-4b8a-b279-d19a2760f712', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-21 22:18:59,855 - layerx.execution.router - INFO - [executions.py:42] - File saved successfully: uploads/cf91858c-b0cf-4fd5-8b88-77f9f530f6f9.pdf
+2026-03-21 22:18:59,855 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '14717292-f499-4b8a-b279-d19a2760f712', 'input_file_path': 'uploads/cf91858c-b0cf-4fd5-8b88-77f9f530f6f9.pdf', 'has_file': True}
+2026-03-21 22:18:59,865 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: test 5 with 3 nodes
+2026-03-21 22:18:59,872 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: beb697ba-3849-430a-938c-bf2582c5e44f
+2026-03-21 22:18:59,873 - layerx.execution.router - INFO - [executions.py:55] - Starting background processing for execution: beb697ba-3849-430a-938c-bf2582c5e44f
+2026-03-21 22:18:59,874 - layerx.execution.router - INFO - [executions.py:59] - Execution beb697ba-3849-430a-938c-bf2582c5e44f committed to database
+2026-03-21 22:18:59,875 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'beb697ba-3849-430a-938c-bf2582c5e44f', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-21 22:18:59,880 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'beb697ba-3849-430a-938c-bf2582c5e44f', 'step': 'execution_retrieved', 'workflow_id': '14717292-f499-4b8a-b279-d19a2760f712', 'input_file_path': 'uploads/cf91858c-b0cf-4fd5-8b88-77f9f530f6f9.pdf', 'status': 'RUNNING'}
+2026-03-21 22:18:59,882 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'beb697ba-3849-430a-938c-bf2582c5e44f', 'step': 'workflow_loaded', 'workflow_name': 'test 5', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI', 'FORMATTER']}
+2026-03-21 22:18:59,882 - layerx.execution.processor - INFO - [executions.py:153] - Starting node processing for execution beb697ba-3849-430a-938c-bf2582c5e44f with input: uploads/cf91858c-b0cf-4fd5-8b88-77f9f530f6f9.pdf
+2026-03-21 22:18:59,882 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'beb697ba-3849-430a-938c-bf2582c5e44f', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-21 22:19:00,438 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'beb697ba-3849-430a-938c-bf2582c5e44f', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 12887}
+2026-03-21 22:19:00,438 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'beb697ba-3849-430a-938c-bf2582c5e44f', 'step': 'node_processing_start', 'node_name': 'ああ', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/3', 'input_data_type': 'str', 'input_data_length': 12887}
+2026-03-21 22:19:12,371 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'beb697ba-3849-430a-938c-bf2582c5e44f', 'step': 'node_processing_complete', 'node_name': 'ああ', 'node_step': '2/3', 'output_data_type': 'str', 'output_data_length': 352}
+2026-03-21 22:19:12,372 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'beb697ba-3849-430a-938c-bf2582c5e44f', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'FORMATTER', 'node_order': 2, 'node_step': '3/3', 'input_data_type': 'str', 'input_data_length': 352}
+2026-03-21 22:19:12,372 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'beb697ba-3849-430a-938c-bf2582c5e44f', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '3/3', 'output_data_type': 'str', 'output_data_length': 352}
+2026-03-21 22:19:12,373 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'beb697ba-3849-430a-938c-bf2582c5e44f', 'step': 'workflow_execution_complete', 'final_output_length': 352, 'nodes_processed': 3}
+2026-03-21 22:19:12,373 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'beb697ba-3849-430a-938c-bf2582c5e44f', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 352}
+2026-03-21 22:19:12,376 - layerx.execution.service - INFO - [execution_service.py:104] - Execution beb697ba-3849-430a-938c-bf2582c5e44f completed successfully with 352 chars output
+2026-03-21 22:19:12,384 - layerx.execution.service - INFO - [execution_service.py:110] - Execution beb697ba-3849-430a-938c-bf2582c5e44f status updated from RUNNING to COMPLETED
+2026-03-22 01:53:53,217 - layerx.workflow.router - INFO - [workflows.py:26] - Workflow 1159eec2-03a8-4b1f-a477-1a735409040a committed to database
+2026-03-22 01:53:59,037 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '1159eec2-03a8-4b1f-a477-1a735409040a', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'order': 0}
+2026-03-22 01:54:09,507 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '1159eec2-03a8-4b1f-a477-1a735409040a', 'node_name': 'aa', 'node_type': 'FORMATTER', 'order': 1}
+2026-03-22 01:54:32,976 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '1159eec2-03a8-4b1f-a477-1a735409040a', 'node_name': 'aaa', 'node_type': 'GENERATIVE_AI', 'order': 2}
+2026-03-22 01:56:45,558 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '1159eec2-03a8-4b1f-a477-1a735409040a', 'file_name': 'tutorial-02.pdf', 'file_content_type': 'application/pdf', 'file_size': 57651}
+2026-03-22 01:56:45,562 - layerx.execution.router - INFO - [executions.py:42] - File saved successfully: uploads/954f46fd-bae4-446f-bd3c-149d572b190d.pdf
+2026-03-22 01:56:45,562 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '1159eec2-03a8-4b1f-a477-1a735409040a', 'input_file_path': 'uploads/954f46fd-bae4-446f-bd3c-149d572b190d.pdf', 'has_file': True}
+2026-03-22 01:56:45,570 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: test 6 with 3 nodes
+2026-03-22 01:56:45,579 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: c6c5e40f-bee4-4e48-9c7f-708762496ed0
+2026-03-22 01:56:45,579 - layerx.execution.router - INFO - [executions.py:55] - Starting background processing for execution: c6c5e40f-bee4-4e48-9c7f-708762496ed0
+2026-03-22 01:56:45,581 - layerx.execution.router - INFO - [executions.py:59] - Execution c6c5e40f-bee4-4e48-9c7f-708762496ed0 committed to database
+2026-03-22 01:56:45,582 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c6c5e40f-bee4-4e48-9c7f-708762496ed0', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-22 01:56:45,587 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c6c5e40f-bee4-4e48-9c7f-708762496ed0', 'step': 'execution_retrieved', 'workflow_id': '1159eec2-03a8-4b1f-a477-1a735409040a', 'input_file_path': 'uploads/954f46fd-bae4-446f-bd3c-149d572b190d.pdf', 'status': 'RUNNING'}
+2026-03-22 01:56:45,588 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c6c5e40f-bee4-4e48-9c7f-708762496ed0', 'step': 'workflow_loaded', 'workflow_name': 'test 6', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'FORMATTER', 'GENERATIVE_AI']}
+2026-03-22 01:56:45,588 - layerx.execution.processor - INFO - [executions.py:153] - Starting node processing for execution c6c5e40f-bee4-4e48-9c7f-708762496ed0 with input: uploads/954f46fd-bae4-446f-bd3c-149d572b190d.pdf
+2026-03-22 01:56:45,589 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c6c5e40f-bee4-4e48-9c7f-708762496ed0', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-22 01:56:45,626 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c6c5e40f-bee4-4e48-9c7f-708762496ed0', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 1625}
+2026-03-22 01:56:45,626 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c6c5e40f-bee4-4e48-9c7f-708762496ed0', 'step': 'node_processing_start', 'node_name': 'aa', 'node_type': 'FORMATTER', 'node_order': 1, 'node_step': '2/3', 'input_data_type': 'str', 'input_data_length': 1625}
+2026-03-22 01:56:45,627 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c6c5e40f-bee4-4e48-9c7f-708762496ed0', 'step': 'node_processing_complete', 'node_name': 'aa', 'node_step': '2/3', 'output_data_type': 'str', 'output_data_length': 1625}
+2026-03-22 01:56:45,627 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c6c5e40f-bee4-4e48-9c7f-708762496ed0', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'GENERATIVE_AI', 'node_order': 2, 'node_step': '3/3', 'input_data_type': 'str', 'input_data_length': 1625}
+2026-03-22 01:56:56,305 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c6c5e40f-bee4-4e48-9c7f-708762496ed0', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '3/3', 'output_data_type': 'str', 'output_data_length': 251}
+2026-03-22 01:56:56,306 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c6c5e40f-bee4-4e48-9c7f-708762496ed0', 'step': 'workflow_execution_complete', 'final_output_length': 251, 'nodes_processed': 3}
+2026-03-22 01:56:56,306 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'c6c5e40f-bee4-4e48-9c7f-708762496ed0', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 251}
+2026-03-22 01:56:56,308 - layerx.execution.service - INFO - [execution_service.py:104] - Execution c6c5e40f-bee4-4e48-9c7f-708762496ed0 completed successfully with 251 chars output
+2026-03-22 01:56:56,313 - layerx.execution.service - INFO - [execution_service.py:110] - Execution c6c5e40f-bee4-4e48-9c7f-708762496ed0 status updated from RUNNING to COMPLETED
+2026-03-22 01:57:13,350 - layerx.workflow.router - INFO - [workflows.py:26] - Workflow 59957947-8c41-4256-aab0-52d7860dce73 committed to database
+2026-03-22 01:57:24,465 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '59957947-8c41-4256-aab0-52d7860dce73', 'node_name': 'あああ', 'node_type': 'EXTRACT_TEXT', 'order': 0}
+2026-03-22 02:03:56,439 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '59957947-8c41-4256-aab0-52d7860dce73', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'order': 1}
+2026-03-22 18:58:07,498 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '59957947-8c41-4256-aab0-52d7860dce73', 'file_name': 'CTWD Assignment 1.pdf', 'file_content_type': 'application/pdf', 'file_size': 43841}
+2026-03-22 18:58:07,501 - layerx.execution.router - INFO - [executions.py:42] - File saved successfully: uploads/75989b9c-5012-4327-9093-3d10bea685dd.pdf
+2026-03-22 18:58:07,501 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '59957947-8c41-4256-aab0-52d7860dce73', 'input_file_path': 'uploads/75989b9c-5012-4327-9093-3d10bea685dd.pdf', 'has_file': True}
+2026-03-22 18:58:07,507 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '59957947-8c41-4256-aab0-52d7860dce73', 'file_name': 'AiW事業部_SWE技術課題_松葉 悠悟さま.pdf', 'file_content_type': 'application/pdf', 'file_size': 264630}
+2026-03-22 18:58:07,509 - layerx.execution.router - INFO - [executions.py:42] - File saved successfully: uploads/0c1592fa-8008-4079-bdf8-f85c281e0d9c.pdf
+2026-03-22 18:58:07,509 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '59957947-8c41-4256-aab0-52d7860dce73', 'input_file_path': 'uploads/0c1592fa-8008-4079-bdf8-f85c281e0d9c.pdf', 'has_file': True}
+2026-03-22 18:58:07,517 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: ああ with 2 nodes
+2026-03-22 18:58:07,532 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: ああ with 2 nodes
+2026-03-22 18:58:07,536 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '59957947-8c41-4256-aab0-52d7860dce73', 'file_name': 'Week 3 Tutorial - Graphics.pdf', 'file_content_type': 'application/pdf', 'file_size': 1200655}
+2026-03-22 18:58:07,538 - layerx.execution.router - INFO - [executions.py:42] - File saved successfully: uploads/0f761519-2001-4aff-a092-fb5cd79699c3.pdf
+2026-03-22 18:58:07,538 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '59957947-8c41-4256-aab0-52d7860dce73', 'input_file_path': 'uploads/0f761519-2001-4aff-a092-fb5cd79699c3.pdf', 'has_file': True}
+2026-03-22 18:58:07,541 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: ああ with 2 nodes
+2026-03-22 18:58:07,558 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: d490e5cb-a69e-419b-804a-356b8ef9638d
+2026-03-22 18:58:07,558 - layerx.execution.router - INFO - [executions.py:55] - Starting background processing for execution: d490e5cb-a69e-419b-804a-356b8ef9638d
+2026-03-22 18:58:07,559 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: 2250fff4-2684-4035-a0d9-eae61577dfec
+2026-03-22 18:58:07,559 - layerx.execution.router - INFO - [executions.py:55] - Starting background processing for execution: 2250fff4-2684-4035-a0d9-eae61577dfec
+2026-03-22 18:58:07,561 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: 2ea0ee88-5a7d-4ad7-b12b-6b7e64567f52
+2026-03-22 18:58:07,561 - layerx.execution.router - INFO - [executions.py:55] - Starting background processing for execution: 2ea0ee88-5a7d-4ad7-b12b-6b7e64567f52
+2026-03-22 18:58:07,562 - layerx.execution.router - INFO - [executions.py:59] - Execution 2ea0ee88-5a7d-4ad7-b12b-6b7e64567f52 committed to database
+2026-03-22 18:58:07,563 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2ea0ee88-5a7d-4ad7-b12b-6b7e64567f52', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-22 18:58:07,564 - layerx.execution.router - INFO - [executions.py:59] - Execution d490e5cb-a69e-419b-804a-356b8ef9638d committed to database
+2026-03-22 18:58:07,564 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd490e5cb-a69e-419b-804a-356b8ef9638d', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-22 18:58:07,564 - layerx.execution.router - INFO - [executions.py:59] - Execution 2250fff4-2684-4035-a0d9-eae61577dfec committed to database
+2026-03-22 18:58:07,565 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2250fff4-2684-4035-a0d9-eae61577dfec', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-22 18:58:07,566 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2ea0ee88-5a7d-4ad7-b12b-6b7e64567f52', 'step': 'execution_retrieved', 'workflow_id': '59957947-8c41-4256-aab0-52d7860dce73', 'input_file_path': 'uploads/75989b9c-5012-4327-9093-3d10bea685dd.pdf', 'status': 'RUNNING'}
+2026-03-22 18:58:07,568 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2250fff4-2684-4035-a0d9-eae61577dfec', 'step': 'execution_retrieved', 'workflow_id': '59957947-8c41-4256-aab0-52d7860dce73', 'input_file_path': 'uploads/0f761519-2001-4aff-a092-fb5cd79699c3.pdf', 'status': 'RUNNING'}
+2026-03-22 18:58:07,568 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2ea0ee88-5a7d-4ad7-b12b-6b7e64567f52', 'step': 'workflow_loaded', 'workflow_name': 'ああ', 'node_count': 2, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI']}
+2026-03-22 18:58:07,569 - layerx.execution.processor - INFO - [executions.py:153] - Starting node processing for execution 2ea0ee88-5a7d-4ad7-b12b-6b7e64567f52 with input: uploads/75989b9c-5012-4327-9093-3d10bea685dd.pdf
+2026-03-22 18:58:07,569 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2ea0ee88-5a7d-4ad7-b12b-6b7e64567f52', 'step': 'node_processing_start', 'node_name': 'あああ', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/2', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-22 18:58:07,572 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2250fff4-2684-4035-a0d9-eae61577dfec', 'step': 'workflow_loaded', 'workflow_name': 'ああ', 'node_count': 2, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI']}
+2026-03-22 18:58:07,572 - layerx.execution.processor - INFO - [executions.py:153] - Starting node processing for execution 2250fff4-2684-4035-a0d9-eae61577dfec with input: uploads/0f761519-2001-4aff-a092-fb5cd79699c3.pdf
+2026-03-22 18:58:07,572 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2250fff4-2684-4035-a0d9-eae61577dfec', 'step': 'node_processing_start', 'node_name': 'あああ', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/2', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-22 18:58:07,640 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd490e5cb-a69e-419b-804a-356b8ef9638d', 'step': 'execution_retrieved', 'workflow_id': '59957947-8c41-4256-aab0-52d7860dce73', 'input_file_path': 'uploads/0c1592fa-8008-4079-bdf8-f85c281e0d9c.pdf', 'status': 'RUNNING'}
+2026-03-22 18:58:07,641 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2ea0ee88-5a7d-4ad7-b12b-6b7e64567f52', 'step': 'node_processing_complete', 'node_name': 'あああ', 'node_step': '1/2', 'output_data_type': 'str', 'output_data_length': 1529}
+2026-03-22 18:58:07,642 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2ea0ee88-5a7d-4ad7-b12b-6b7e64567f52', 'step': 'node_processing_start', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/2', 'input_data_type': 'str', 'input_data_length': 1529}
+2026-03-22 18:58:07,716 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd490e5cb-a69e-419b-804a-356b8ef9638d', 'step': 'workflow_loaded', 'workflow_name': 'ああ', 'node_count': 2, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI']}
+2026-03-22 18:58:07,716 - layerx.execution.processor - INFO - [executions.py:153] - Starting node processing for execution d490e5cb-a69e-419b-804a-356b8ef9638d with input: uploads/0c1592fa-8008-4079-bdf8-f85c281e0d9c.pdf
+2026-03-22 18:58:07,716 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd490e5cb-a69e-419b-804a-356b8ef9638d', 'step': 'node_processing_start', 'node_name': 'あああ', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/2', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-22 18:58:07,722 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2250fff4-2684-4035-a0d9-eae61577dfec', 'step': 'node_processing_complete', 'node_name': 'あああ', 'node_step': '1/2', 'output_data_type': 'str', 'output_data_length': 3737}
+2026-03-22 18:58:07,722 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2250fff4-2684-4035-a0d9-eae61577dfec', 'step': 'node_processing_start', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/2', 'input_data_type': 'str', 'input_data_length': 3737}
+2026-03-22 18:58:08,245 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd490e5cb-a69e-419b-804a-356b8ef9638d', 'step': 'node_processing_complete', 'node_name': 'あああ', 'node_step': '1/2', 'output_data_type': 'str', 'output_data_length': 12887}
+2026-03-22 18:58:08,245 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd490e5cb-a69e-419b-804a-356b8ef9638d', 'step': 'node_processing_start', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/2', 'input_data_type': 'str', 'input_data_length': 12887}
+2026-03-22 18:58:17,048 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2250fff4-2684-4035-a0d9-eae61577dfec', 'step': 'node_processing_complete', 'node_name': 'aa', 'node_step': '2/2', 'output_data_type': 'str', 'output_data_length': 409}
+2026-03-22 18:58:17,049 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2250fff4-2684-4035-a0d9-eae61577dfec', 'step': 'workflow_execution_complete', 'final_output_length': 409, 'nodes_processed': 2}
+2026-03-22 18:58:17,049 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2250fff4-2684-4035-a0d9-eae61577dfec', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 409}
+2026-03-22 18:58:17,064 - layerx.execution.service - INFO - [execution_service.py:104] - Execution 2250fff4-2684-4035-a0d9-eae61577dfec completed successfully with 409 chars output
+2026-03-22 18:58:17,082 - layerx.execution.service - INFO - [execution_service.py:110] - Execution 2250fff4-2684-4035-a0d9-eae61577dfec status updated from RUNNING to COMPLETED
+2026-03-22 18:58:17,687 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2ea0ee88-5a7d-4ad7-b12b-6b7e64567f52', 'step': 'node_processing_complete', 'node_name': 'aa', 'node_step': '2/2', 'output_data_type': 'str', 'output_data_length': 321}
+2026-03-22 18:58:17,687 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2ea0ee88-5a7d-4ad7-b12b-6b7e64567f52', 'step': 'workflow_execution_complete', 'final_output_length': 321, 'nodes_processed': 2}
+2026-03-22 18:58:17,688 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2ea0ee88-5a7d-4ad7-b12b-6b7e64567f52', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 321}
+2026-03-22 18:58:17,690 - layerx.execution.service - INFO - [execution_service.py:104] - Execution 2ea0ee88-5a7d-4ad7-b12b-6b7e64567f52 completed successfully with 321 chars output
+2026-03-22 18:58:17,695 - layerx.execution.service - INFO - [execution_service.py:110] - Execution 2ea0ee88-5a7d-4ad7-b12b-6b7e64567f52 status updated from RUNNING to COMPLETED
+2026-03-22 18:58:21,878 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd490e5cb-a69e-419b-804a-356b8ef9638d', 'step': 'node_processing_complete', 'node_name': 'aa', 'node_step': '2/2', 'output_data_type': 'str', 'output_data_length': 466}
+2026-03-22 18:58:21,879 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd490e5cb-a69e-419b-804a-356b8ef9638d', 'step': 'workflow_execution_complete', 'final_output_length': 466, 'nodes_processed': 2}
+2026-03-22 18:58:21,879 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd490e5cb-a69e-419b-804a-356b8ef9638d', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 466}
+2026-03-22 18:58:21,880 - layerx.execution.service - INFO - [execution_service.py:104] - Execution d490e5cb-a69e-419b-804a-356b8ef9638d completed successfully with 466 chars output
+2026-03-22 18:58:21,884 - layerx.execution.service - INFO - [execution_service.py:110] - Execution d490e5cb-a69e-419b-804a-356b8ef9638d status updated from RUNNING to COMPLETED
+2026-03-22 19:39:29,504 - layerx.workflow.router - INFO - [workflows.py:26] - Workflow 9ef3176a-9c71-4ff7-a5c9-54af201722ba committed to database
+2026-03-22 19:39:48,209 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '9ef3176a-9c71-4ff7-a5c9-54af201722ba', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'order': 0}
+2026-03-22 19:40:01,977 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '9ef3176a-9c71-4ff7-a5c9-54af201722ba', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'order': 1}
+2026-03-22 19:40:10,158 - layerx.workflow.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /workflows/{workflow_id}/nodes', 'timestamp': None, 'workflow_id': '9ef3176a-9c71-4ff7-a5c9-54af201722ba', 'node_name': 'aaa', 'node_type': 'FORMATTER', 'order': 2}
+2026-03-22 19:40:34,269 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '9ef3176a-9c71-4ff7-a5c9-54af201722ba', 'file_name': 'CTWD Assignment 1.pdf', 'file_content_type': 'application/pdf', 'file_size': 43841}
+2026-03-22 19:40:34,273 - layerx.execution.router - INFO - [executions.py:42] - File saved successfully: uploads/a276797d-983f-4ba3-be57-a024deff7db3.pdf
+2026-03-22 19:40:34,273 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '9ef3176a-9c71-4ff7-a5c9-54af201722ba', 'input_file_path': 'uploads/a276797d-983f-4ba3-be57-a024deff7db3.pdf', 'has_file': True}
+2026-03-22 19:40:34,277 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '9ef3176a-9c71-4ff7-a5c9-54af201722ba', 'file_name': 'practical-02.pdf', 'file_content_type': 'application/pdf', 'file_size': 68151}
+2026-03-22 19:40:34,277 - layerx.execution.router - INFO - [executions.py:42] - File saved successfully: uploads/10be91a2-da25-4771-9e79-d2d7ab481129.pdf
+2026-03-22 19:40:34,278 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '9ef3176a-9c71-4ff7-a5c9-54af201722ba', 'input_file_path': 'uploads/10be91a2-da25-4771-9e79-d2d7ab481129.pdf', 'has_file': True}
+2026-03-22 19:40:34,278 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '9ef3176a-9c71-4ff7-a5c9-54af201722ba', 'file_name': 'prelab-1.pdf', 'file_content_type': 'application/pdf', 'file_size': 129094}
+2026-03-22 19:40:34,279 - layerx.execution.router - INFO - [executions.py:42] - File saved successfully: uploads/ec97d1c9-2032-48ad-b1fd-0122053c7d48.pdf
+2026-03-22 19:40:34,279 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '9ef3176a-9c71-4ff7-a5c9-54af201722ba', 'input_file_path': 'uploads/ec97d1c9-2032-48ad-b1fd-0122053c7d48.pdf', 'has_file': True}
+2026-03-22 19:40:34,280 - layerx.execution.router - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'POST /executions/', 'timestamp': None, 'workflow_id': '9ef3176a-9c71-4ff7-a5c9-54af201722ba', 'file_name': 'Resume (5).pdf', 'file_content_type': 'application/pdf', 'file_size': 80570}
+2026-03-22 19:40:34,282 - layerx.execution.router - INFO - [executions.py:42] - File saved successfully: uploads/423e24f0-ab57-463f-93a6-79d89d6feffc.pdf
+2026-03-22 19:40:34,282 - layerx.execution.service - INFO - [logging.py:86] - REQUEST_DATA: {'endpoint': 'start_execution', 'timestamp': None, 'workflow_id': '9ef3176a-9c71-4ff7-a5c9-54af201722ba', 'input_file_path': 'uploads/423e24f0-ab57-463f-93a6-79d89d6feffc.pdf', 'has_file': True}
+2026-03-22 19:40:34,290 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: aaaa with 3 nodes
+2026-03-22 19:40:34,295 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: aaaa with 3 nodes
+2026-03-22 19:40:34,296 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: aaaa with 3 nodes
+2026-03-22 19:40:34,298 - layerx.execution.service - INFO - [execution_service.py:42] - Found workflow: aaaa with 3 nodes
+2026-03-22 19:40:34,303 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: e1c85bb6-b948-4c69-8a9b-7d4a58eca4bd
+2026-03-22 19:40:34,304 - layerx.execution.router - INFO - [executions.py:55] - Starting background processing for execution: e1c85bb6-b948-4c69-8a9b-7d4a58eca4bd
+2026-03-22 19:40:34,305 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: d0590e5f-dab9-46df-a95d-f81decf181c7
+2026-03-22 19:40:34,305 - layerx.execution.router - INFO - [executions.py:55] - Starting background processing for execution: d0590e5f-dab9-46df-a95d-f81decf181c7
+2026-03-22 19:40:34,306 - layerx.execution.router - INFO - [executions.py:59] - Execution e1c85bb6-b948-4c69-8a9b-7d4a58eca4bd committed to database
+2026-03-22 19:40:34,307 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e1c85bb6-b948-4c69-8a9b-7d4a58eca4bd', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-22 19:40:34,308 - layerx.execution.router - INFO - [executions.py:59] - Execution d0590e5f-dab9-46df-a95d-f81decf181c7 committed to database
+2026-03-22 19:40:34,309 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd0590e5f-dab9-46df-a95d-f81decf181c7', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-22 19:40:34,311 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e1c85bb6-b948-4c69-8a9b-7d4a58eca4bd', 'step': 'execution_retrieved', 'workflow_id': '9ef3176a-9c71-4ff7-a5c9-54af201722ba', 'input_file_path': 'uploads/ec97d1c9-2032-48ad-b1fd-0122053c7d48.pdf', 'status': 'RUNNING'}
+2026-03-22 19:40:34,311 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: 2c4dcc64-7a98-44ad-8d62-cc5d1391d085
+2026-03-22 19:40:34,311 - layerx.execution.router - INFO - [executions.py:55] - Starting background processing for execution: 2c4dcc64-7a98-44ad-8d62-cc5d1391d085
+2026-03-22 19:40:34,312 - layerx.execution.service - INFO - [execution_service.py:57] - Created execution: 84b2d6d9-0778-49fd-bcbe-4ae61b901c8d
+2026-03-22 19:40:34,312 - layerx.execution.router - INFO - [executions.py:55] - Starting background processing for execution: 84b2d6d9-0778-49fd-bcbe-4ae61b901c8d
+2026-03-22 19:40:34,313 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e1c85bb6-b948-4c69-8a9b-7d4a58eca4bd', 'step': 'workflow_loaded', 'workflow_name': 'aaaa', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI', 'FORMATTER']}
+2026-03-22 19:40:34,313 - layerx.execution.processor - INFO - [executions.py:153] - Starting node processing for execution e1c85bb6-b948-4c69-8a9b-7d4a58eca4bd with input: uploads/ec97d1c9-2032-48ad-b1fd-0122053c7d48.pdf
+2026-03-22 19:40:34,313 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e1c85bb6-b948-4c69-8a9b-7d4a58eca4bd', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-22 19:40:34,381 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd0590e5f-dab9-46df-a95d-f81decf181c7', 'step': 'execution_retrieved', 'workflow_id': '9ef3176a-9c71-4ff7-a5c9-54af201722ba', 'input_file_path': 'uploads/a276797d-983f-4ba3-be57-a024deff7db3.pdf', 'status': 'RUNNING'}
+2026-03-22 19:40:34,382 - layerx.execution.router - INFO - [executions.py:59] - Execution 84b2d6d9-0778-49fd-bcbe-4ae61b901c8d committed to database
+2026-03-22 19:40:34,382 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '84b2d6d9-0778-49fd-bcbe-4ae61b901c8d', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-22 19:40:34,383 - layerx.execution.router - INFO - [executions.py:59] - Execution 2c4dcc64-7a98-44ad-8d62-cc5d1391d085 committed to database
+2026-03-22 19:40:34,383 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2c4dcc64-7a98-44ad-8d62-cc5d1391d085', 'step': 'background_processing_start', 'message': 'Starting background workflow execution processing'}
+2026-03-22 19:40:34,384 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e1c85bb6-b948-4c69-8a9b-7d4a58eca4bd', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 4767}
+2026-03-22 19:40:34,384 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e1c85bb6-b948-4c69-8a9b-7d4a58eca4bd', 'step': 'node_processing_start', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/3', 'input_data_type': 'str', 'input_data_length': 4767}
+2026-03-22 19:40:34,393 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2c4dcc64-7a98-44ad-8d62-cc5d1391d085', 'step': 'execution_retrieved', 'workflow_id': '9ef3176a-9c71-4ff7-a5c9-54af201722ba', 'input_file_path': 'uploads/423e24f0-ab57-463f-93a6-79d89d6feffc.pdf', 'status': 'RUNNING'}
+2026-03-22 19:40:34,394 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '84b2d6d9-0778-49fd-bcbe-4ae61b901c8d', 'step': 'execution_retrieved', 'workflow_id': '9ef3176a-9c71-4ff7-a5c9-54af201722ba', 'input_file_path': 'uploads/10be91a2-da25-4771-9e79-d2d7ab481129.pdf', 'status': 'RUNNING'}
+2026-03-22 19:40:34,394 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd0590e5f-dab9-46df-a95d-f81decf181c7', 'step': 'workflow_loaded', 'workflow_name': 'aaaa', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI', 'FORMATTER']}
+2026-03-22 19:40:34,394 - layerx.execution.processor - INFO - [executions.py:153] - Starting node processing for execution d0590e5f-dab9-46df-a95d-f81decf181c7 with input: uploads/a276797d-983f-4ba3-be57-a024deff7db3.pdf
+2026-03-22 19:40:34,394 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd0590e5f-dab9-46df-a95d-f81decf181c7', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-22 19:40:34,396 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2c4dcc64-7a98-44ad-8d62-cc5d1391d085', 'step': 'workflow_loaded', 'workflow_name': 'aaaa', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI', 'FORMATTER']}
+2026-03-22 19:40:34,396 - layerx.execution.processor - INFO - [executions.py:153] - Starting node processing for execution 2c4dcc64-7a98-44ad-8d62-cc5d1391d085 with input: uploads/423e24f0-ab57-463f-93a6-79d89d6feffc.pdf
+2026-03-22 19:40:34,396 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2c4dcc64-7a98-44ad-8d62-cc5d1391d085', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-22 19:40:34,397 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '84b2d6d9-0778-49fd-bcbe-4ae61b901c8d', 'step': 'workflow_loaded', 'workflow_name': 'aaaa', 'node_count': 3, 'node_types': ['EXTRACT_TEXT', 'GENERATIVE_AI', 'FORMATTER']}
+2026-03-22 19:40:34,397 - layerx.execution.processor - INFO - [executions.py:153] - Starting node processing for execution 84b2d6d9-0778-49fd-bcbe-4ae61b901c8d with input: uploads/10be91a2-da25-4771-9e79-d2d7ab481129.pdf
+2026-03-22 19:40:34,397 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '84b2d6d9-0778-49fd-bcbe-4ae61b901c8d', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'EXTRACT_TEXT', 'node_order': 0, 'node_step': '1/3', 'input_data_type': 'str', 'input_data_length': 48}
+2026-03-22 19:40:34,656 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd0590e5f-dab9-46df-a95d-f81decf181c7', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 1529}
+2026-03-22 19:40:34,657 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd0590e5f-dab9-46df-a95d-f81decf181c7', 'step': 'node_processing_start', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/3', 'input_data_type': 'str', 'input_data_length': 1529}
+2026-03-22 19:40:34,737 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2c4dcc64-7a98-44ad-8d62-cc5d1391d085', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 3780}
+2026-03-22 19:40:34,737 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2c4dcc64-7a98-44ad-8d62-cc5d1391d085', 'step': 'node_processing_start', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/3', 'input_data_type': 'str', 'input_data_length': 3780}
+2026-03-22 19:40:34,740 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '84b2d6d9-0778-49fd-bcbe-4ae61b901c8d', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '1/3', 'output_data_type': 'str', 'output_data_length': 8870}
+2026-03-22 19:40:34,740 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '84b2d6d9-0778-49fd-bcbe-4ae61b901c8d', 'step': 'node_processing_start', 'node_name': 'aa', 'node_type': 'GENERATIVE_AI', 'node_order': 1, 'node_step': '2/3', 'input_data_type': 'str', 'input_data_length': 8870}
+2026-03-22 19:40:43,468 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '84b2d6d9-0778-49fd-bcbe-4ae61b901c8d', 'step': 'node_processing_complete', 'node_name': 'aa', 'node_step': '2/3', 'output_data_type': 'str', 'output_data_length': 343}
+2026-03-22 19:40:43,468 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '84b2d6d9-0778-49fd-bcbe-4ae61b901c8d', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'FORMATTER', 'node_order': 2, 'node_step': '3/3', 'input_data_type': 'str', 'input_data_length': 343}
+2026-03-22 19:40:43,469 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '84b2d6d9-0778-49fd-bcbe-4ae61b901c8d', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '3/3', 'output_data_type': 'str', 'output_data_length': 343}
+2026-03-22 19:40:43,469 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '84b2d6d9-0778-49fd-bcbe-4ae61b901c8d', 'step': 'workflow_execution_complete', 'final_output_length': 343, 'nodes_processed': 3}
+2026-03-22 19:40:43,470 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '84b2d6d9-0778-49fd-bcbe-4ae61b901c8d', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 343}
+2026-03-22 19:40:43,472 - layerx.execution.service - INFO - [execution_service.py:104] - Execution 84b2d6d9-0778-49fd-bcbe-4ae61b901c8d completed successfully with 343 chars output
+2026-03-22 19:40:43,489 - layerx.execution.service - INFO - [execution_service.py:110] - Execution 84b2d6d9-0778-49fd-bcbe-4ae61b901c8d status updated from RUNNING to COMPLETED
+2026-03-22 19:40:44,282 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e1c85bb6-b948-4c69-8a9b-7d4a58eca4bd', 'step': 'node_processing_complete', 'node_name': 'aa', 'node_step': '2/3', 'output_data_type': 'str', 'output_data_length': 392}
+2026-03-22 19:40:44,282 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e1c85bb6-b948-4c69-8a9b-7d4a58eca4bd', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'FORMATTER', 'node_order': 2, 'node_step': '3/3', 'input_data_type': 'str', 'input_data_length': 392}
+2026-03-22 19:40:44,282 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e1c85bb6-b948-4c69-8a9b-7d4a58eca4bd', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '3/3', 'output_data_type': 'str', 'output_data_length': 392}
+2026-03-22 19:40:44,283 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e1c85bb6-b948-4c69-8a9b-7d4a58eca4bd', 'step': 'workflow_execution_complete', 'final_output_length': 392, 'nodes_processed': 3}
+2026-03-22 19:40:44,283 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'e1c85bb6-b948-4c69-8a9b-7d4a58eca4bd', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 392}
+2026-03-22 19:40:44,287 - layerx.execution.service - INFO - [execution_service.py:104] - Execution e1c85bb6-b948-4c69-8a9b-7d4a58eca4bd completed successfully with 392 chars output
+2026-03-22 19:40:44,292 - layerx.execution.service - INFO - [execution_service.py:110] - Execution e1c85bb6-b948-4c69-8a9b-7d4a58eca4bd status updated from RUNNING to COMPLETED
+2026-03-22 19:40:44,803 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd0590e5f-dab9-46df-a95d-f81decf181c7', 'step': 'node_processing_complete', 'node_name': 'aa', 'node_step': '2/3', 'output_data_type': 'str', 'output_data_length': 366}
+2026-03-22 19:40:44,804 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd0590e5f-dab9-46df-a95d-f81decf181c7', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'FORMATTER', 'node_order': 2, 'node_step': '3/3', 'input_data_type': 'str', 'input_data_length': 366}
+2026-03-22 19:40:44,804 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd0590e5f-dab9-46df-a95d-f81decf181c7', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '3/3', 'output_data_type': 'str', 'output_data_length': 366}
+2026-03-22 19:40:44,804 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd0590e5f-dab9-46df-a95d-f81decf181c7', 'step': 'workflow_execution_complete', 'final_output_length': 366, 'nodes_processed': 3}
+2026-03-22 19:40:44,804 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': 'd0590e5f-dab9-46df-a95d-f81decf181c7', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 366}
+2026-03-22 19:40:44,806 - layerx.execution.service - INFO - [execution_service.py:104] - Execution d0590e5f-dab9-46df-a95d-f81decf181c7 completed successfully with 366 chars output
+2026-03-22 19:40:44,811 - layerx.execution.service - INFO - [execution_service.py:110] - Execution d0590e5f-dab9-46df-a95d-f81decf181c7 status updated from RUNNING to COMPLETED
+2026-03-22 19:40:47,048 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2c4dcc64-7a98-44ad-8d62-cc5d1391d085', 'step': 'node_processing_complete', 'node_name': 'aa', 'node_step': '2/3', 'output_data_type': 'str', 'output_data_length': 567}
+2026-03-22 19:40:47,049 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2c4dcc64-7a98-44ad-8d62-cc5d1391d085', 'step': 'node_processing_start', 'node_name': 'aaa', 'node_type': 'FORMATTER', 'node_order': 2, 'node_step': '3/3', 'input_data_type': 'str', 'input_data_length': 567}
+2026-03-22 19:40:47,049 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2c4dcc64-7a98-44ad-8d62-cc5d1391d085', 'step': 'node_processing_complete', 'node_name': 'aaa', 'node_step': '3/3', 'output_data_type': 'str', 'output_data_length': 567}
+2026-03-22 19:40:47,049 - layerx.execution.processor - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2c4dcc64-7a98-44ad-8d62-cc5d1391d085', 'step': 'workflow_execution_complete', 'final_output_length': 567, 'nodes_processed': 3}
+2026-03-22 19:40:47,049 - layerx.execution.service - INFO - [logging.py:100] - EXECUTION_STEP: {'execution_id': '2c4dcc64-7a98-44ad-8d62-cc5d1391d085', 'step': 'status_update', 'new_status': 'COMPLETED', 'has_output_data': True, 'has_error': False, 'output_data_length': 567}
+2026-03-22 19:40:47,052 - layerx.execution.service - INFO - [execution_service.py:104] - Execution 2c4dcc64-7a98-44ad-8d62-cc5d1391d085 completed successfully with 567 chars output
+2026-03-22 19:40:47,056 - layerx.execution.service - INFO - [execution_service.py:110] - Execution 2c4dcc64-7a98-44ad-8d62-cc5d1391d085 status updated from RUNNING to COMPLETED

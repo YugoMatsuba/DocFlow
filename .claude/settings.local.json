@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p /Users/yugo/Desktop/LayerX/server/application/processors)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
