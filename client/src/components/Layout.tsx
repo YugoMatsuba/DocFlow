@@ -40,7 +40,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
               fontWeight: '600'
             }}
           >
-            Workflow Application
+            DocFlow
           </Link>
 
           <nav style={{ display: 'flex', gap: '2rem' }}>

@@ -1,4 +1,4 @@
-# Workflow Application
+# DocFlow
 
 This is a workflow application that allows users to create and execute document processing pipelines using various node types.
 
