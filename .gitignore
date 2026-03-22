@@ -6,6 +6,10 @@ Thumbs.db
 .idea/
 .vscode/
 
+# Internal docs / planning
+spec.md
+planning/
+
 # Environment files
 .env
 .env.*
@@ -41,6 +45,7 @@ client/node_modules/
 client/dist/
 client/.vite/
 *.tsbuildinfo
+*.backup
 
 # Build / temporary files
 tmp/
