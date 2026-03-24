@@ -271,6 +271,33 @@ npm run dev
 - `005-api-design`
 - `006-realtime`
 
+## テスト
+
+### 自動テスト実行
+
+```bash
+cd server
+source .venv/bin/activate
+pip install -r requirements-dev.txt
+python -m pytest tests/unit/ -v
+```
+
+### カバレッジ付きテスト実行
+
+```bash
+cd server
+python -m pytest tests/unit/ --cov=. --cov-report=term-missing
+```
+
+### コンパイル確認
+
+```bash
+cd server
+python -m compileall .
+```
+
+詳細なテスト結果と手法については [`docs/test-report.md`](docs/test-report.md) を参照してください。
+
 ## 補足
 
 - アップロードされたファイルは `server/uploads/` に保存されます
