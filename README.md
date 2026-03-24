@@ -38,43 +38,21 @@ flowchart LR
 - HTTP リクエストを受けて、入力を application service に渡し、HTTP レスポンスへ変換する
 - 具体的な非同期実行方式や DB 実装はここで直接扱わない
 
-工夫したポイント:
-
-- Router に業務ロジックを寄せすぎないようにし、HTTP の責務に集中させている
-- 依存解決は `dependencies.py` に集約し、具体実装の差し替え箇所を明確にしている
-
 #### `services`
 
 - ユースケースのオーケストレーションを担当
 - Workflow の作成・検証、Execution の作成・起動・状態更新を扱う
 - ProcessorRegistry を使ってノード処理を実行し、Dispatcher を通じて非同期起動する
 
-工夫したポイント:
-
-- `ExecutionService` は `ExecutionDispatcher` 抽象に依存させ、起動方式の詳細を隠している
-- ノード追加時に service 側へ巨大な分岐を書かなくて済むよう、processor と registry を組み合わせている
-
 #### `domain`
 
 - Entity、Enum、Repository interface、Rule、Spec を担当
 - ワークフローの整合性やノード入出力制約など、業務上のルールを表現する
 
-工夫したポイント:
-
-- `WorkflowRules` にワークフローの検証ロジックを分離し、service の責務を軽くしている
-- `NodeSpec` / `NodeSpecRegistry` にノードの入出力制約を切り出し、ルールと実装詳細を分離している
-- Repository interface を domain 側に置き、上位層が DB 実装に直接依存しないようにしている
-
 #### `infra`
 
 - PostgreSQL への永続化、OpenAI API 呼び出し、ファイル保存、BackgroundTasks 実装などを担当
 - domain / service が必要とする外部依存の具体実装を提供する
-
-工夫したポイント:
-
-- SQLAlchemy repository に DB 実装を閉じ込め、service は repository interface だけを見る構成にしている
-- `BackgroundTasksExecutionDispatcher` を adapter として置き、FastAPI 固有の仕組みを service/Router から分離している
-- `FileStorage`、`OpenAIClient` を分けて、I/O 系の責務を一点にまとめている
 
 ### 設計上の工夫
 
@@ -270,6 +248,7 @@ npm run dev
 - `004-node-expansion`
 - `005-api-design`
 - `006-realtime`
+- `007-multiple-pdf-input`
 
 ## テスト
 
