@@ -1,3 +1,4 @@
+from pathlib import Path
 from typing import Optional, List
 
 from sqlalchemy.ext.asyncio import AsyncSession
@@ -10,6 +11,7 @@ from api.schemas.execution import ExecutionResponse
 from domain.rules.workflow_rules import WorkflowRules
 from config.logging import get_logger, log_request_data, log_execution_step
 from services.execution_dispatcher import ExecutionDispatcher
+from errors import NotFoundError, ProcessingError, ServiceError, ValidationError
 from services.processors.registry import ProcessorRegistry
 
 class ExecutionService:
@@ -30,7 +32,7 @@ class ExecutionService:
         self,
         workflow_id: str,
         input_file_path: Optional[str] = None
-    ) -> Optional[ExecutionResponse]:
+    ) -> ExecutionResponse:
         """Start workflow execution with file input"""
         # Log the execution request
         log_request_data(
@@ -44,7 +46,7 @@ class ExecutionService:
         workflow = await self.workflow_repository.get_with_nodes(workflow_id)
         if not workflow:
             self.logger.warning(f"Workflow not found: {workflow_id}")
-            return None
+            raise NotFoundError("Workflow not found")
 
         # Log workflow details
         self.logger.info(f"Found workflow: {workflow.name} with {len(workflow.nodes)} nodes")
@@ -54,20 +56,41 @@ class ExecutionService:
         validation_errors = WorkflowRules.validate_workflow(workflow)
         validation_errors.extend(self._validate_node_configurations(workflow.nodes))
         if validation_errors:
-            self.logger.error(f"Workflow validation failed: {validation_errors}")
-            return None
+            self.logger.warning(
+                "Workflow validation failed for workflow_id=%s: %s",
+                workflow_id,
+                validation_errors,
+            )
+            raise ValidationError(
+                "Workflow is invalid and cannot be executed",
+                errors=validation_errors,
+            )
 
         execution = Execution.create(
             workflow_id=workflow_id,
             input_file_path=input_file_path
         )
 
-        created_execution = await self.execution_repository.create(execution)
-        await self.db_session.commit()
-        self.logger.info(f"Created execution and committed transaction: {created_execution.id}")
+        try:
+            created_execution = await self.execution_repository.create(execution)
+            await self.db_session.commit()
+            self.logger.info("Created execution and committed transaction: %s", created_execution.id)
+        except Exception as exc:
+            self.logger.exception("Failed to create execution for workflow_id=%s", workflow_id)
+            raise ProcessingError("Failed to start execution") from exc
 
-        self.dispatcher.dispatch(created_execution.id, self.process_workflow_execution)
-        self.logger.info(f"Dispatched background processing for execution: {created_execution.id}")
+        try:
+            self.dispatcher.dispatch(created_execution.id, self.process_workflow_execution)
+            self.logger.info("Dispatched background processing for execution: %s", created_execution.id)
+        except Exception as exc:
+            self.logger.exception("Failed to dispatch background processing for execution=%s", created_execution.id)
+            await self.update_execution_status(
+                created_execution.id,
+                ExecutionStatus.FAILED,
+                error_message="Execution could not be started",
+            )
+            await self.db_session.commit()
+            raise ProcessingError("Failed to start execution") from exc
 
         return self._to_execution_response(created_execution)
 
@@ -217,10 +240,11 @@ class ExecutionService:
                         error=str(exc)
                     )
 
+                    public_error_message = self._public_error_message(exc, "Node processing failed")
                     await self.update_execution_status(
                         execution_id,
                         ExecutionStatus.FAILED,
-                        error_message=f"Error processing node {node.name}: {str(exc)}"
+                        error_message=f"Node '{node.name}' failed: {public_error_message}"
                     )
                     return
 
@@ -246,10 +270,11 @@ class ExecutionService:
                 error=str(exc)
             )
 
+            public_error_message = self._public_error_message(exc, "Workflow execution failed")
             await self.update_execution_status(
                 execution_id,
                 ExecutionStatus.FAILED,
-                error_message=f"Execution failed: {str(exc)}"
+                error_message=public_error_message
             )
 
     def _validate_node_configurations(self, nodes: List["Node"]) -> List[str]:
@@ -270,10 +295,26 @@ class ExecutionService:
             id=execution.id,
             workflow_id=execution.workflow_id,
             status=execution.status,
-            input_file_path=execution.input_file_path,
+            input_file_path=self._to_public_file_name(execution.input_file_path),
             output_data=execution.output_data,
             error_message=execution.error_message,
             created_at=execution.created_at,
             updated_at=execution.updated_at,
             completed_at=execution.completed_at
         )
+
+    def _public_error_message(self, exc: Exception, default_message: str) -> str:
+        """Convert internal exceptions to user-safe error messages."""
+        if isinstance(exc, ServiceError):
+            return exc.public_message
+        return default_message
+
+    def _to_public_file_name(self, input_file_path: Optional[str]) -> Optional[str]:
+        """Hide internal filesystem paths from API responses."""
+        if not input_file_path:
+            return None
+
+        try:
+            return Path(input_file_path).name
+        except Exception:
+            return input_file_path

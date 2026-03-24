@@ -4,6 +4,7 @@ import PyPDF2
 import io
 
 from .base import BaseNodeProcessor
+from errors import ProcessingError
 
 class ExtractTextProcessor(BaseNodeProcessor):
     """Processor for extracting text from PDF files"""
@@ -15,7 +16,7 @@ class ExtractTextProcessor(BaseNodeProcessor):
             file_path = input_data
 
             if not file_path:
-                raise ValueError("File path is required for text extraction")
+                raise ProcessingError("Input file is missing")
 
             # Read PDF file and extract text
             async with aiofiles.open(file_path, 'rb') as file:
@@ -23,10 +24,12 @@ class ExtractTextProcessor(BaseNodeProcessor):
                 text = await self._extract_pdf_text(pdf_content, config)
                 return text
 
-        except FileNotFoundError:
-            raise Exception(f"PDF file not found: {file_path}")
-        except Exception as e:
-            raise Exception(f"Text extraction error: {str(e)}")
+        except FileNotFoundError as exc:
+            raise ProcessingError("Input PDF file could not be found") from exc
+        except ProcessingError:
+            raise
+        except Exception as exc:
+            raise ProcessingError("Text extraction failed") from exc
 
     def validate_config(self, config: Dict[str, Any]) -> None:
         """Validate node configuration"""
@@ -60,8 +63,10 @@ class ExtractTextProcessor(BaseNodeProcessor):
 
             return extracted_text
 
-        except Exception as e:
-            raise Exception(f"PDF text extraction failed: {str(e)}")
+        except ProcessingError:
+            raise
+        except Exception as exc:
+            raise ProcessingError("PDF text extraction failed") from exc
 
     def _clean_extracted_text(self, text: str) -> str:
         """Clean extracted text"""

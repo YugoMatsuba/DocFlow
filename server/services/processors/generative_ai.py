@@ -3,6 +3,7 @@ from typing import Dict, Any, List
 from .base import BaseNodeProcessor
 from infra.ai.openai_client import OpenAIClient
 from config.settings import settings
+from errors import ProcessingError
 
 class GenerativeAIProcessor(BaseNodeProcessor):
     """Processor for generative AI operations using OpenAI"""
@@ -14,7 +15,7 @@ class GenerativeAIProcessor(BaseNodeProcessor):
         """Process AI generation with input text"""
         try:
             if not settings.OPENAI_API_KEY:
-                raise Exception("OPENAI_API_KEY environment variable not set")
+                raise ProcessingError("AI service is not configured")
 
             if not self.openai_client:
                 self.openai_client = OpenAIClient(settings.OPENAI_API_KEY)
@@ -29,8 +30,10 @@ class GenerativeAIProcessor(BaseNodeProcessor):
 
             return response
 
-        except Exception as e:
-            raise Exception(f"AI generation error: {str(e)}")
+        except ProcessingError:
+            raise
+        except Exception as exc:
+            raise ProcessingError("AI generation failed") from exc
 
     def validate_config(self, config: Dict[str, Any]) -> None:
         """Validate node configuration"""

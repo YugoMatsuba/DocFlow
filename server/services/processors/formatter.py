@@ -1,6 +1,7 @@
 from typing import Dict, Any, List
 
 from .base import BaseNodeProcessor
+from errors import ProcessingError
 
 class FormatterProcessor(BaseNodeProcessor):
     """Processor for formatting text data"""
@@ -23,8 +24,10 @@ class FormatterProcessor(BaseNodeProcessor):
             else:
                 raise ValueError(f"Unsupported format type: {format_type}")
 
-        except Exception as e:
-            raise Exception(f"Formatting error: {str(e)}")
+        except ValueError as exc:
+            raise ProcessingError("Formatter configuration is invalid") from exc
+        except Exception as exc:
+            raise ProcessingError("Formatting failed") from exc
 
     def validate_config(self, config: Dict[str, Any]) -> None:
         """Validate node configuration"""

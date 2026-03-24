@@ -8,20 +8,21 @@
 
 ## 決定事項
 
-**resource-oriented な API を採用し、`workflows` と `executions` を別 resource として扱う**。
+**REST API を採用し、`workflows` と `executions` を別 resource として扱う**。
 
 現時点の主要エンドポイントは以下とする。
 
+ワークフロー作成関連
 - `POST /api/workflows/`
 - `GET /api/workflows/`
 - `GET /api/workflows/{workflow_id}`
 - `POST /api/workflows/{workflow_id}/nodes`
 - `GET /api/workflows/{workflow_id}/validate`
+
+ワークフロー実行関連
 - `POST /api/executions/?workflow_id={workflow_id}` + multipart file upload
 - `GET /api/executions/`
 - `GET /api/executions/{execution_id}`
-- `GET /`
-- `GET /health`
 
 設計意図は以下である。
 
@@ -44,7 +45,7 @@
 👎**Cons**
 
 - `workflow_id` の受け渡し位置に設計判断が必要
-- 単純な `/run` エンドポイントより数は増える
+- RPC API のエンドポイントより数は増える
 
 ### Option2: `POST /workflows/{workflow_id}/run` のような RPC 寄り API
 
@@ -58,24 +59,9 @@
 
 - Execution を独立 resource として扱いづらい
 - 実行状態参照や履歴との整合が弱い
-- 非同期処理を API モデルとして説明しづらい
-
-### Option3: 汎用アクション API に寄せる
-
-👍**Pros**
-
-- 柔軟に見える
-- 将来さまざまな操作を載せやすい
-
-👎**Cons**
-
-- API の意味が曖昧になりやすい
-- 一貫性が下がりやすい
-- クライアントとドキュメントの双方で理解しづらい
 
 ## 懸念事項・影響範囲
 
 - **workflow_id の位置**: 現在はファイルアップロードを簡潔に扱うため、Execution 開始時は query parameter にしている
 - **将来拡張**: 再実行、キャンセル、フィルタ付き一覧が必要になった場合も `executions` resource に追加しやすい
-- **クライアント理解コスト**: Workflow 系と Execution 系の API を分けているため、責務は明確だが理解対象は増える
 - **MVP とのバランス**: API 数はやや増えるが、非同期実行を表現するには妥当な複雑さと判断した

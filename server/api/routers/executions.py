@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException, Depends, status, UploadFile, File, Query
 from typing import List
 
+from errors import NotFoundError, ValidationError
 from services.execution_service import ExecutionService
 from api.schemas.execution import ExecutionResponse
 from api.dependencies import get_execution_service
@@ -32,6 +33,8 @@ async def start_execution(
         file_size=file.size if hasattr(file, 'size') else 'unknown'
     )
 
+    file_path = None
+
     try:
         # Save the uploaded file
         file_path = await file_storage.save_pdf_file(file)
@@ -39,26 +42,39 @@ async def start_execution(
 
         # Create execution with file path
         execution = await service.start_execution(workflow_id, file_path)
-        if not execution:
-            # Clean up uploaded file if execution creation failed
-            logger.warning(f"Execution creation failed, cleaning up file: {file_path}")
-            file_storage.delete_file(file_path)
-            raise HTTPException(
-                status_code=status.HTTP_404_NOT_FOUND,
-                detail="Workflow not found or invalid"
-            )
-
         logger.info(f"Execution {execution.id} accepted for background processing")
 
         return execution
+    except NotFoundError as exc:
+        if file_path:
+            file_storage.delete_file(file_path)
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=exc.public_message,
+        ) from exc
+    except ValidationError as exc:
+        if file_path:
+            file_storage.delete_file(file_path)
+        detail: object = exc.public_message
+        if exc.errors:
+            detail = {
+                "message": exc.public_message,
+                "errors": exc.errors,
+            }
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=detail,
+        ) from exc
     except HTTPException:
         raise
-    except Exception as e:
-        logger.error(f"Unexpected error in start_execution: {str(e)}")
+    except Exception as exc:
+        if file_path:
+            file_storage.delete_file(file_path)
+        logger.exception("Unexpected error while starting execution for workflow_id=%s", workflow_id)
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to start execution: {str(e)}"
-        )
+            detail="Failed to start execution"
+        ) from exc
 
 @router.get("/", response_model=List[ExecutionResponse])
 async def list_executions(

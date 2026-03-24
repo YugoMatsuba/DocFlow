@@ -1,5 +1,7 @@
 import aiohttp
-from typing import Dict, Any, Optional
+
+from config.logging import get_logger
+from errors import ProcessingError
 
 class OpenAIClient:
     """OpenAI API client for generative AI requests"""
@@ -9,6 +11,7 @@ class OpenAIClient:
             raise ValueError("OpenAI API key is required")
         self.api_key = api_key
         self.base_url = "https://api.openai.com/v1"
+        self.logger = get_logger("infra.openai")
 
     async def generate_completion(
         self,
@@ -33,11 +36,25 @@ class OpenAIClient:
             "temperature": temperature
         }
 
-        async with aiohttp.ClientSession() as session:
-            async with session.post(url, headers=headers, json=payload) as response:
-                if response.status != 200:
-                    error_text = await response.text()
-                    raise Exception(f"OpenAI API error {response.status}: {error_text}")
+        try:
+            async with aiohttp.ClientSession() as session:
+                async with session.post(url, headers=headers, json=payload) as response:
+                    if response.status != 200:
+                        error_text = await response.text()
+                        self.logger.error(
+                            "OpenAI API request failed with status=%s body=%s",
+                            response.status,
+                            error_text,
+                        )
+                        raise ProcessingError("AI service request failed")
 
-                result = await response.json()
-                return result["choices"][0]["message"]["content"]
+                    result = await response.json()
+                    return result["choices"][0]["message"]["content"]
+        except ProcessingError:
+            raise
+        except aiohttp.ClientError as exc:
+            self.logger.exception("Network error while calling OpenAI API")
+            raise ProcessingError("AI service request failed") from exc
+        except Exception as exc:
+            self.logger.exception("Unexpected error while calling OpenAI API")
+            raise ProcessingError("AI service request failed") from exc

@@ -1,15 +1,17 @@
 import os
 import uuid
 from pathlib import Path
-from typing import Optional
 from fastapi import UploadFile, HTTPException
+
+from config.logging import get_logger
 
 class FileStorage:
     """Helper for file storage operations"""
 
     def __init__(self, upload_dir: str = "uploads"):
         self.upload_dir = Path(upload_dir)
-        self.upload_dir.mkdir(exist_ok=True)
+        self.upload_dir.mkdir(parents=True, exist_ok=True)
+        self.logger = get_logger("storage.file")
 
     async def save_pdf_file(self, file: UploadFile) -> str:
         """Save uploaded PDF file and return the file path"""
@@ -32,11 +34,12 @@ class FileStorage:
                 f.write(contents)
 
             return str(file_path)
-        except Exception as e:
+        except Exception as exc:
+            self.logger.exception("Failed to save uploaded PDF file to %s", file_path)
             raise HTTPException(
                 status_code=500,
-                detail=f"Failed to save file: {str(e)}"
-            )
+                detail="Failed to save file"
+            ) from exc
 
     def delete_file(self, file_path: str) -> None:
         """Delete a file from storage"""
@@ -44,8 +47,7 @@ class FileStorage:
             if os.path.exists(file_path):
                 os.unlink(file_path)
         except Exception:
-            # Silently ignore deletion errors for now
-            pass
+            self.logger.warning("Failed to delete file: %s", file_path, exc_info=True)
 
     def file_exists(self, file_path: str) -> bool:
         """Check if a file exists"""

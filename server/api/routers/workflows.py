@@ -26,11 +26,12 @@ async def create_workflow(
         logger.info(f"Workflow {workflow.id} committed to database")
 
         return workflow
-    except Exception as e:
+    except Exception as exc:
+        logger.exception("Unexpected error while creating workflow")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to create workflow: {str(e)}"
-        )
+            detail="Failed to create workflow"
+        ) from exc
 
 @router.get("/", response_model=List[WorkflowResponse])
 async def list_workflows(
@@ -40,11 +41,12 @@ async def list_workflows(
     try:
         workflows = await service.list_workflows()
         return workflows
-    except Exception as e:
+    except Exception as exc:
+        logger.exception("Unexpected error while listing workflows")
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
-            detail=f"Failed to list workflows: {str(e)}"
-        )
+            detail="Failed to list workflows"
+        ) from exc
 
 @router.get("/{workflow_id}", response_model=WorkflowResponse)
 async def get_workflow(
