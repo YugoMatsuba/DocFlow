@@ -1,123 +1,84 @@
-# LayerX Workflow Engine
+# DocFlow
 
-PDFを入力として、複数ノードからなるワークフローを定義・実行できるドキュメント処理アプリケーションです。  
-バックエンドは FastAPI、フロントエンドは React + Vite、永続化には PostgreSQL を利用しています。
+DocFlow is a document workflow engine that turns uploaded PDFs into text, runs optional AI or formatting steps, and saves the results for later review. The React interface lets you define workflows, submit PDFs, and inspect execution history, results, and errors.
 
-## アプリケーション概要
+## Features
 
-- ワークフローを作成できる
-- ワークフローにノードを追加できる
-- PDF をアップロードしてワークフローを非同期実行できる
-- 実行履歴、実行状態、結果、失敗理由を参照できる
-- `EXTRACT_TEXT`、`GENERATIVE_AI`、`FORMATTER` の3種類のノードを利用できる
+- Build reusable workflows from PDF extraction, AI generation, and text formatting nodes.
+- Validate node order, configuration, and input/output compatibility before running a workflow.
+- Upload a PDF and start a background execution.
+- Retrieve the status, final output, or error message for a previous execution.
+
+## Software Design
+
+The frontend uses React, TypeScript, and Vite. It calls the FastAPI backend through a shared API client in `client/src/api.ts`. The backend separates HTTP handling, application logic, domain rules, and infrastructure.
+
+| Layer | Responsibility |
+| --- | --- |
+| `server/api/` | FastAPI routes, request and response schemas, and dependency injection |
+| `server/services/` | Workflow creation and validation, execution orchestration, and node processing |
+| `server/domain/` | `Workflow`, `Node`, and `Execution` entities, validation rules, node specifications, and repository interfaces |
+| `server/infra/` | SQLAlchemy repositories, PostgreSQL models, local file storage, and the OpenAI API client |
+
+The services read and write data through `WorkflowRepository` and `ExecutionRepository`. FastAPI injects the SQLAlchemy implementations, which map between database records and domain entities. The same dependency setup supplies the `ExecutionDispatcher` implementation that schedules background work.
+
+### Node Pipeline
+
+Workflows run as a linear pipeline. Nodes execute in ascending `order`, and each node receives the previous node's output. The first node must accept a PDF. `WorkflowRules` checks that the workflow has at least one node, that order values are unique, and that adjacent data types are compatible.
+
+Node processing uses the Strategy pattern. `ProcessorRegistry` maps each `NodeType` to a processor that validates its configuration and runs the step. `NodeSpecRegistry` defines the input and output types for each node. Adding a node type involves implementing its processor and registering both the processor and its specification. [Node extension design](adr/004-node-expansion.md)
+
+### Execution Lifecycle
 
 ```mermaid
-flowchart LR
-    U[ユーザー] --> FE[React Frontend]
-    FE --> API[FastAPI API]
-    API --> DB[(PostgreSQL)]
-    API --> FS[ローカルファイル保存<br/>server/uploads]
-    API --> OA[OpenAI API]
+sequenceDiagram
+    participant UI as React
+    participant API as FastAPI
+    participant Files as Local file storage
+    participant Service as ExecutionService
+    participant DB as PostgreSQL
+    participant Tasks as BackgroundTasks
 
-    DB --> API
-    FS --> API
-    OA --> API
-    API --> FE
+    UI->>API: POST /api/executions/ with PDF and workflow ID
+    API->>Files: Save uploaded PDF
+    API->>Service: Start execution with workflow ID and file path
+    Service->>DB: Load workflow
+    Note over Service: Validate node order, types, and configuration
+    Service->>DB: Commit execution as RUNNING
+    Service->>Tasks: Register work through ExecutionDispatcher
+    API-->>UI: 201 Created with execution ID and status
+    Tasks->>Service: Run workflow in the background
+    Note over Service: Run each node in order
+    alt All nodes succeed
+        Service->>DB: Save COMPLETED status and final output
+    else Processing fails
+        Service->>DB: Save FAILED status and error message
+    end
+    UI->>API: GET /api/executions/{execution_id}
+    API->>Service: Look up execution
+    Service->>DB: Read execution record
+    API-->>UI: Return current status, output, or error
 ```
 
-## 現状の設計
+PDFs are stored on the local filesystem. PostgreSQL stores workflow definitions, file paths, execution status, final output, and error messages. Reopen or refresh an execution page to fetch its latest status.
 
-現状はレイヤードアーキテクチャを採用し、`api`、`services`、`domain`、`infra` の責務を分離しています。  
-ワークフロー実行の起動方式は `ExecutionDispatcher` で抽象化しており、MVP では `BackgroundTasks` 実装を利用しています。
+FastAPI's `BackgroundTasks` runs work in the API process after the response is sent. If that process stops during an execution, the work is interrupted and the record can remain `RUNNING`. `ExecutionDispatcher` provides an interface for moving job submission to a worker queue in the future. [Background execution design](adr/002-asynchronous-processing.md)
 
-### レイヤーごとの役割
+## Supported Nodes
 
-#### `api`
+| Node | Input | Output | Configuration |
+| --- | --- | --- | --- |
+| `EXTRACT_TEXT` | PDF | Extracted text | Uses PyPDF2 to extract text |
+| `GENERATIVE_AI` | Text | Generated text | `prompt`, `model`, `temperature`, `max_tokens` |
+| `FORMATTER` | Text | Formatted text | `format_type` supports `uppercase`, `lowercase`, `trim`, and `replace` |
 
-- FastAPI の Router、Schema、Dependency Injection を担当
-- HTTP リクエストを受けて、入力を application service に渡し、HTTP レスポンスへ変換する
-- 具体的な非同期実行方式や DB 実装はここで直接扱わない
+## Getting Started
 
-#### `services`
+You'll need Python, Node.js with npm, and a running PostgreSQL instance. An OpenAI API key is required when running workflows that use `GENERATIVE_AI`.
 
-- ユースケースのオーケストレーションを担当
-- Workflow の作成・検証、Execution の作成・起動・状態更新を扱う
-- ProcessorRegistry を使ってノード処理を実行し、Dispatcher を通じて非同期起動する
+### 1. Set up the backend
 
-#### `domain`
-
-- Entity、Enum、Repository interface、Rule、Spec を担当
-- ワークフローの整合性やノード入出力制約など、業務上のルールを表現する
-
-#### `infra`
-
-- PostgreSQL への永続化、OpenAI API 呼び出し、ファイル保存、BackgroundTasks 実装などを担当
-- domain / service が必要とする外部依存の具体実装を提供する
-
-### 設計上の工夫
-
-- **高凝集**: レイヤーごとに責務を分け、変更理由が異なるコードを同じ場所に集めすぎないようにしている
-- **疎結合**: repository や dispatcher を抽象化し、具体実装の変更が上位層に波及しにくい構造にしている
-- **MVP と将来拡張の両立**: 現時点では `BackgroundTasks` を使ってシンプルに実装しつつ、Dispatcher 抽象で将来のキュー移行余地を残している
-- **ノード追加のしやすさ**: processor、registry、NodeSpec を分けることで、新しい NodeType 追加時の影響範囲を局所化している
-- **ルールの明示**: ノードの入出力制約や workflow の成立条件を domain 側に寄せ、コード上で説明可能な形にしている
-
-ワークフロー実行時の流れは以下です。
-
-## ディレクトリ構成
-
-```text
-.
-├── adr/                    # ADR
-├── client/                 # React + Vite フロントエンド
-│   ├── src/                # 画面、API クライアント、型定義
-│   ├── package.json
-│   └── vite.config.ts
-├── docs/                   # エージェント運用資料、Spec テンプレート
-├── server/                 # FastAPI バックエンド
-│   ├── api/                # Router、Schema、DI
-│   ├── domain/             # Entity、Rule、Spec、Repository interface
-│   ├── infra/              # DB、外部 API、ファイル保存などの実装
-│   ├── services/           # ユースケース実装、processor、dispatcher
-│   ├── alembic/            # マイグレーション
-│   ├── config/             # 設定管理
-│   ├── main.py             # FastAPI エントリポイント
-│   └── requirements.txt
-├── CLAUDE.md               # エージェント向け開発ルール
-└── README.md
-```
-
-## 技術スタック
-
-- Backend: FastAPI, SQLAlchemy, Alembic
-- Frontend: React, React Router, Vite, TypeScript
-- Database: PostgreSQL
-- File handling: Python multipart upload + ローカル保存
-- PDF parsing: PyPDF2
-- AI integration: OpenAI API
-
-## 前提環境
-
-- Python 3.9 以上
-- Node.js 18 以上を推奨
-- npm
-- PostgreSQL
-
-## セットアップ
-
-### 1. PostgreSQL を用意する
-
-ローカルで PostgreSQL を起動し、接続先 DB を作成してください。  
-デフォルトでは以下を想定しています。
-
-- DB 名: `layerx_workflow_db`
-- ユーザー: `postgres`
-- パスワード: `postgres`
-- ポート: `5432`
-
-必要に応じて `server/.env` 側で変更してください。
-
-### 2. バックエンドをセットアップする
+Create a PostgreSQL database for DocFlow, then run:
 
 ```bash
 cd server
@@ -127,42 +88,20 @@ pip install -r requirements.txt
 cp .env.example .env
 ```
 
-`.env` の主な項目:
+Set `DATABASE_URL` and `DATABASE_URL_SYNC` in `server/.env` to point to your database. Set `OPENAI_API_KEY` if you plan to use the AI node.
 
-- `DATABASE_URL`
-- `DATABASE_URL_SYNC`
-- `UPLOAD_DIR`
-- `MAX_FILE_SIZE`
-- `OPENAI_API_KEY`
-
-補足:
-
-- `OPENAI_API_KEY` は `GENERATIVE_AI` ノードを使う場合に必要です
-- `REDIS_URL` は将来拡張用で、現状の MVP 実装では利用していません
-
-### 3. マイグレーションを適用する
+Apply the Alembic migrations and start the API:
 
 ```bash
-cd server
-source .venv/bin/activate
 alembic upgrade head
+uvicorn main:app --reload --port 8000
 ```
 
-### 4. バックエンドを起動する
+The API is available at `http://localhost:8000`. Open Swagger UI at `http://localhost:8000/docs` to explore the endpoints.
 
-```bash
-cd server
-source .venv/bin/activate
-uvicorn main:app --reload --host 0.0.0.0 --port 8000
-```
+### 2. Start the frontend
 
-起動後のURL:
-
-- API: `http://localhost:8000`
-- Swagger UI: `http://localhost:8000/docs`
-- Health Check: `http://localhost:8000/health`
-
-### 5. フロントエンドを起動する
+In a separate terminal, run the following from the repository root:
 
 ```bash
 cd client
@@ -170,89 +109,49 @@ npm install
 npm run dev
 ```
 
-起動後のURL:
+Open `http://localhost:3000`.
 
-- Frontend: `http://localhost:3000`
+### 3. Run a workflow
 
-## 使い方
+1. Create a workflow and add `EXTRACT_TEXT` as the first node.
+2. Add a `FORMATTER` node with `uppercase`, or add a `GENERATIVE_AI` node with a prompt.
+3. Validate the workflow, then upload a PDF from the execution screen.
+4. Open the execution details to view the status and output. Refresh the page if the execution is still running.
 
-1. ワークフローを作成する
-2. ワークフロー詳細画面でノードを追加する
-3. 必要に応じてワークフローを検証する
-4. 実行画面から PDF をアップロードして実行する
-5. Execution 一覧または詳細画面で状態と結果を確認する
+## API Reference
 
-## 対応ノード
+| Method | Endpoint | Purpose |
+| --- | --- | --- |
+| `POST` | `/api/workflows/` | Create a workflow |
+| `GET` | `/api/workflows/` | List workflows |
+| `GET` | `/api/workflows/{workflow_id}` | Get a workflow and its nodes |
+| `POST` | `/api/workflows/{workflow_id}/nodes` | Add a node |
+| `GET` | `/api/workflows/{workflow_id}/validate` | Validate a workflow |
+| `POST` | `/api/executions/?workflow_id={workflow_id}` | Start an execution with a PDF in the `multipart/form-data` field `file` |
+| `GET` | `/api/executions/` | List executions |
+| `GET` | `/api/executions/{execution_id}` | Get execution status, output, or error |
 
-### `EXTRACT_TEXT`
+## Repository Structure
 
-- 入力: PDF ファイル
-- 出力: 抽出済みテキスト
+```text
+.
+├── adr/                    # Architecture decision records
+├── client/                 # React, TypeScript, and Vite frontend
+│   └── src/                # Screens, API client, and shared types
+├── docs/                   # Project documentation and test report
+└── server/                 # FastAPI backend
+    ├── alembic/            # Database migrations
+    ├── api/                # Routes, schemas, and dependency injection
+    ├── domain/             # Entities, rules, specs, and repository interfaces
+    ├── infra/              # Persistence, file storage, and external API client
+    ├── services/           # Workflow and execution logic
+    ├── tests/              # Unit and API tests
+    └── main.py             # FastAPI entry point
+```
 
-### `GENERATIVE_AI`
+## Tests
 
-- 入力: テキスト
-- 出力: 生成テキスト
-- 主な設定:
-  - `prompt`
-  - `model`
-  - `temperature`
-  - `max_tokens`
-
-### `FORMATTER`
-
-- 入力: テキスト
-- 出力: 整形済みテキスト
-- 主な設定:
-  - `format_type`
-- 対応フォーマット:
-  - `uppercase`
-  - `lowercase`
-  - `trim`
-  - `replace`
-
-## API 一覧
-
-ベースパスは `/api` です。
-
-### Workflow API
-
-- `POST /api/workflows/`
-- `GET /api/workflows/`
-- `GET /api/workflows/{workflow_id}`
-- `POST /api/workflows/{workflow_id}/nodes`
-- `GET /api/workflows/{workflow_id}/validate`
-
-### Execution API
-
-- `POST /api/executions/?workflow_id={workflow_id}`
-  - `multipart/form-data` で PDF ファイルをアップロード
-- `GET /api/executions/`
-- `GET /api/executions/{execution_id}`
-
-## 現状の設計上のポイント
-
-- 非同期実行は `BackgroundTasks` を利用した in-process 実装
-- 将来のキュー移行に備え、実行起動方式は `ExecutionDispatcher` で抽象化
-- ノード処理は `ProcessorRegistry` と各 Processor に分離
-- ノードの入出力制約は `NodeSpec` と `WorkflowRules` で管理
-- 実行結果と状態は DB に永続化
-
-## ADR
-
-設計判断は `adr/` 配下に記録しています。
-
-- `001-database-selection`
-- `002-asynchronous-processing`
-- `003-software-architecture`
-- `004-node-expansion`
-- `005-api-design`
-- `006-realtime`
-- `007-multiple-pdf-input`
-
-## テスト
-
-### 自動テスト実行
+From the repository root:
 
 ```bash
 cd server
@@ -261,25 +160,10 @@ pip install -r requirements-dev.txt
 python -m pytest tests/unit/ -v
 ```
 
-### カバレッジ付きテスト実行
+For coverage:
 
 ```bash
-cd server
 python -m pytest tests/unit/ --cov=. --cov-report=term-missing
 ```
 
-### コンパイル確認
-
-```bash
-cd server
-python -m compileall .
-```
-
-詳細なテスト結果と手法については [`docs/test-report.md`](docs/test-report.md) を参照してください。
-
-## 補足
-
-- アップロードされたファイルは `server/uploads/` に保存されます
-- ログは `server/logs/` に出力されます
-- 現在の CORS 設定は `http://localhost:3000` を許可しています
-- アプリ起動時に `create_tables()` も呼ばれますが、スキーマ管理は Alembic を正としています
+See the [test report](docs/test-report.md) for details.
